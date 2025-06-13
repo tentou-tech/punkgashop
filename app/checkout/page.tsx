@@ -38,7 +38,9 @@ export default function Checkout() {
         <div className='space-y-4'>
           <div className='text-xl font-bold'>Contact</div>
           <div className='grid w-full items-center gap-2'>
-            <Label htmlFor='email'>Email</Label>
+            <Label htmlFor='email'>
+              Email <span className='text-red-500'>*</span>
+            </Label>
             <Input
               type='email'
               id='email'
@@ -59,7 +61,9 @@ export default function Checkout() {
           <div className='text-xl font-bold'>Delivery</div>
 
           <div className='grid w-full items-center gap-2'>
-            <Label htmlFor='name'>Name</Label>
+            <Label htmlFor='name'>
+              Name <span className='text-red-500'>*</span>
+            </Label>
             <Input
               type='text'
               id='name'
@@ -69,7 +73,9 @@ export default function Checkout() {
             />
           </div>
           <div className='grid w-full items-center gap-2'>
-            <Label htmlFor='phone'>Phone number</Label>
+            <Label htmlFor='phone'>
+              Phone number <span className='text-red-500'>*</span>
+            </Label>
             <Input
               type='text'
               id='phone'
@@ -79,7 +85,9 @@ export default function Checkout() {
             />
           </div>
           <div className='grid w-full items-center gap-2'>
-            <Label htmlFor='address'>Address</Label>
+            <Label htmlFor='address'>
+              Address <span className='text-red-500'>*</span>
+            </Label>
             <Input
               type='text'
               id='address'
@@ -90,7 +98,7 @@ export default function Checkout() {
           </div>
           <div className='grid w-full items-center gap-2'>
             <Label htmlFor='note'>Note</Label>
-            <Textarea id='note' placeholder='Note' required {...register('note')} />
+            <Textarea id='note' placeholder='Note' {...register('note')} />
           </div>
 
           <Button className='w-full justify-center' type='submit'>
@@ -140,7 +148,7 @@ const CheckoutItem = () => {
           <span className='whitespace-nowrap overflow-hidden truncate'>Polo thể thao nam Promax Sideflow</span>
           <span className='ml-1 text-xs text-Text-Default-text-tertiary'>x3</span>
         </div>
-        <div className='text-xs capitalize text-Text-Default-text-tertiary'>S, Whitw</div>
+        <div className='text-xs capitalize text-Text-Default-text-tertiary'>S, White</div>
       </div>
       <div className='shrink-0 text-sm'>250.000 VNĐ</div>
     </div>
