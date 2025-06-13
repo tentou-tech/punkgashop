@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Minus, PlusIcon } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 export default function ProductPage() {
   return (
@@ -37,6 +38,7 @@ export default function ProductPage() {
 }
 function ProductDetail() {
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({ loop: true })
+  const { push } = useRouter()
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: 'keepSnaps',
@@ -157,8 +159,8 @@ function ProductDetail() {
             Officially Licensed Lore Olympus Merchandise The models are wearing a mediumshort sleeve tee.
           </div>
           <div className='grid grid-cols-2 gap-4'>
-            <Button>Add to cart</Button>
-            <Button>Buy now</Button>
+            <Button onClick={() => push('/cart')}>Add to cart</Button>
+            <Button onClick={() => push('/checkout')}>Buy now</Button>
           </div>
         </div>
       </div>
