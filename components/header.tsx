@@ -15,7 +15,9 @@ export default function Header() {
   return (
     <header className='sticky top-0 z-50 border-b border-Border-border-teriary bg-Surface-Background-bg-body px-6 py-4 flex items-center justify-between'>
       <div className='flex items-center gap-10'>
-        <Image src={Logo} alt='Logo' width={100} height={100} className='h-9 w-auto' />
+        <Link href='/'>
+          <Image src={Logo} alt='Logo' width={100} height={100} className='h-9 w-auto' />
+        </Link>
         <NavigationMenu viewport={false}>
           <NavigationMenuList>
             <NavigationMenuItem>

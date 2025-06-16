@@ -7,11 +7,11 @@ import X from '@/assets/icons/x'
 import Youtube from '@/assets/icons/youtube'
 import Mock from '@/assets/mock.png'
 import { Button } from '@/components/ui/button'
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Minus, PlusIcon } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 export default function CollectionPage() {
   return (
@@ -53,8 +53,12 @@ export default function CollectionPage() {
 }
 const Product = () => {
   const [quantity, setQuantity] = useState(1)
+  const [open, setOpen] = useState(false)
+  const { push } = useRouter()
   return (
-    <div className='relative pb-6 [&:hover_.add-to-cart]:block'>
+    <div
+      onClick={() => push('/collection/summer-party/product/tee-shirt')}
+      className='relative pb-6 [&:hover_.add-to-cart]:block'>
       <div className='h-6 px-1 py-0.5 bg-[#00e160] rounded-xs inline-flex justify-center items-center absolute top-2 left-2'>
         <div className='size- px-1 flex justify-center items-center gap-2.5'>
           <div className='text-center justify-center text-[#09090a] text-xs font-bold'>Pre order</div>
@@ -62,13 +66,21 @@ const Product = () => {
       </div>
       <div className='w-full aspect-square bg-gray-200 relative'>
         <div className='add-to-cart absolute bottom-2.5 right-2.5 hidden'>
-          <Dialog>
+          <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button>
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  e.preventDefault()
+                  setOpen(true)
+                }}>
                 <PlusIcon /> Add to Cart
               </Button>
             </DialogTrigger>
             <DialogContent>
+              <DialogHeader>
+                <DialogTitle className='hidden'>Add to Cart</DialogTitle>
+              </DialogHeader>
               <div className='space-y-4'>
                 <div className='flex gap-6 items-center'>
                   <Image
@@ -117,20 +129,24 @@ const Product = () => {
                   </div>
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
-                  <Button className='flex justify-center'>Add to Cart</Button>
-                  <Button className='flex justify-center'>Checkout</Button>
+                  <Button className='flex justify-center' onClick={() => push('/cart')}>
+                    Add to Cart
+                  </Button>
+                  <Button className='flex justify-center' onClick={() => push('/checkout')}>
+                    Checkout
+                  </Button>
                 </div>
               </div>
             </DialogContent>
           </Dialog>
         </div>
       </div>
-      <Link href='/collection/summer-party/product/tee-shirt'>
+      <div>
         <div className='self-stretch justify-start text-white text-base font-bold mt-6'>
           Polo thể thao nam Promax Sideflow
         </div>
         <div className='justify-start text-[#d9d9de] text-sm font-normal'>250.000 VNĐ</div>
-      </Link>
+      </div>
     </div>
   )
 }
