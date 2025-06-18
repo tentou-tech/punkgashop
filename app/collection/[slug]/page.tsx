@@ -8,7 +8,6 @@ import Youtube from '@/assets/icons/youtube'
 import Mock from '@/assets/mock.png'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Minus, PlusIcon } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -17,32 +16,22 @@ export default function CollectionPage() {
   return (
     <main>
       <div className='bg-gray-400 w-full aspect-video'></div>
-      <div className='bg-black py-10 flex flex-col items-center justify-center gap-7'>
-        <div className='text-center justify-start text-white text-2xl font-bold'>FOLLOW US</div>
-        <div className='flex gap-8 items-center justify-center'>
-          <Discord />
-          <Facebook />
-          <Instagram />
-          <Tiktok />
-          <X />
-          <Youtube />
+      <div className='bg-black py-6 md:py-10 flex flex-col items-center justify-center gap-4 md:gap-7'>
+        <div className='text-center justify-start text-white text-xl md:text-2xl font-bold'>FOLLOW US</div>
+        <div className='flex gap-4 md:gap-8 items-center justify-center'>
+          <Discord className='w-5 h-5 md:w-6 md:h-6' />
+          <Facebook className='w-5 h-5 md:w-6 md:h-6' />
+          <Instagram className='w-5 h-5 md:w-6 md:h-6' />
+          <Tiktok className='w-5 h-5 md:w-6 md:h-6' />
+          <X className='w-5 h-5 md:w-6 md:h-6' />
+          <Youtube className='w-5 h-5 md:w-6 md:h-6' />
         </div>
       </div>
-      <div className='p-6 space-y-6'>
+      <div className='p-4 md:p-6 space-y-4 md:space-y-6'>
         <div className='flex items-center justify-between'>
-          <h1 className='text-3xl font-bold'>Shop</h1>
-          <Select>
-            <SelectTrigger className='w-[180px]'>
-              <SelectValue placeholder='Theme' />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value='light'>Light</SelectItem>
-              <SelectItem value='dark'>Dark</SelectItem>
-              <SelectItem value='system'>System</SelectItem>
-            </SelectContent>
-          </Select>
+          <h1 className='text-2xl md:text-3xl font-bold'>Shop</h1>
         </div>
-        <div className='grid grid-cols-6 gap-6'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-6'>
           {[...Array(36)].map((_, index) => (
             <Product key={index} />
           ))}
@@ -58,10 +47,10 @@ const Product = () => {
   return (
     <div
       onClick={() => push('/collection/summer-party/product/tee-shirt')}
-      className='relative pb-6 [&:hover_.add-to-cart]:block'>
-      <div className='h-6 px-1 py-0.5 bg-[#00e160] rounded-xs inline-flex justify-center items-center absolute top-2 left-2'>
-        <div className='size- px-1 flex justify-center items-center gap-2.5'>
-          <div className='text-center justify-center text-[#09090a] text-xs font-bold'>Pre order</div>
+      className='relative pb-4 md:pb-6 [&:hover_.add-to-cart]:block'>
+      <div className='h-5 md:h-6 px-1 py-0.5 bg-[#00e160] rounded-xs inline-flex justify-center items-center absolute top-2 left-2'>
+        <div className='px-1 flex justify-center items-center gap-2'>
+          <div className='text-center justify-center text-[#09090a] text-[10px] md:text-xs font-bold'>Pre order</div>
         </div>
       </div>
       <div className='w-full aspect-square bg-gray-200 relative'>
@@ -82,20 +71,20 @@ const Product = () => {
                 <DialogTitle className='hidden'>Add to Cart</DialogTitle>
               </DialogHeader>
               <div className='space-y-4'>
-                <div className='flex gap-6 items-center'>
+                <div className='flex gap-3 md:gap-6 items-center'>
                   <Image
                     src={Mock}
                     alt='Product'
                     width={500}
                     height={500}
-                    className='object-cover w-20 h-20 border border-brand'
+                    className='object-cover w-16 h-16 md:w-20 md:h-20 border border-brand'
                   />
-                  <div className='self-stretch inline-flex flex-col justify-start items-start gap-2'>
-                    <div className='self-stretch justify-start text-white text-base font-medium'>
+                  <div className='self-stretch inline-flex flex-col justify-start items-start gap-1 md:gap-2'>
+                    <div className='self-stretch justify-start text-white text-sm md:text-base font-medium'>
                       Polo thể thao nam Promax Sideflow
                     </div>
                     <div className='self-stretch inline-flex justify-start items-center gap-1'>
-                      <div className='justify-start text-[#d9d9de] text-sm font-normal'>250.000 VNĐ</div>
+                      <div className='justify-start text-[#d9d9de] text-xs md:text-sm font-normal'>250.000 VNĐ</div>
                     </div>
                   </div>
                 </div>
@@ -108,7 +97,7 @@ const Product = () => {
                         {options.map((option, index) => (
                           <button
                             key={index}
-                            className={`px-3 min-w-20 rounded-xs py-2.5 text-xs md:text-sm border capitalize font-medium`}>
+                            className={`px-2 md:px-3 min-w-16 md:min-w-20 rounded-xs py-2 md:py-2.5 text-xs md:text-sm border capitalize font-medium`}>
                             {option}
                           </button>
                         ))}
@@ -116,15 +105,19 @@ const Product = () => {
                     </div>
                   )
                 })}
-                <div className='space-y-3'>
+                <div className='space-y-2 md:space-y-3'>
                   <div className='text-xs md:text-sm text-text-secondary capitalize'>Quantity</div>
                   <div className='flex items-center gap-2 border w-fit rounded-xs'>
-                    <button className='px-3 py-2.5 cursor-pointer' onClick={() => setQuantity(quantity - 1)}>
-                      <Minus className='w-4 h-4' />
+                    <button
+                      className='px-2 md:px-3 py-2 md:py-2.5 cursor-pointer'
+                      onClick={() => setQuantity(quantity - 1)}>
+                      <Minus className='w-3 h-3 md:w-4 md:h-4' />
                     </button>
                     <span className='text-xs md:text-sm'>{quantity}</span>
-                    <button className='px-3 py-2.5 cursor-pointer' onClick={() => setQuantity(quantity + 1)}>
-                      <PlusIcon className='w-4 h-4' />
+                    <button
+                      className='px-2 md:px-3 py-2 md:py-2.5 cursor-pointer'
+                      onClick={() => setQuantity(quantity + 1)}>
+                      <PlusIcon className='w-3 h-3 md:w-4 md:h-4' />
                     </button>
                   </div>
                 </div>
@@ -142,10 +135,10 @@ const Product = () => {
         </div>
       </div>
       <div>
-        <div className='self-stretch justify-start text-white text-base font-bold mt-6'>
+        <div className='self-stretch justify-start text-white text-sm md:text-base font-bold mt-3 md:mt-6'>
           Polo thể thao nam Promax Sideflow
         </div>
-        <div className='justify-start text-[#d9d9de] text-sm font-normal'>250.000 VNĐ</div>
+        <div className='justify-start text-[#d9d9de] text-xs md:text-sm font-normal'>250.000 VNĐ</div>
       </div>
     </div>
   )

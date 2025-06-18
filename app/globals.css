@@ -7,11 +7,13 @@
   --color-Text-Default-text-primary: #FFF;
   --color-Text-Default-text-secondary: #D9D9DE;
   --color-Text-Default-text-tertiary: #9091A0;
+  --color-Text-Brand-text-brand-primary: #00E160;
   --color-Border-border-teriary: #242429;
   --color-Border-border-primary: #4C4D58;
   --color-Components-Utility-red-utility-red: #F73B3B;
   --color-Button-Type-Sold-Primary-background-color: #00E160;
   --color-Button-Type-Sold-Primary-text-color: #0A0A0B;
+
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -176,4 +178,23 @@ body {
 }
 .embla-thumbs__slide--selected .embla-thumbs__slide__number {
   color: var(--text-body);
+}
+
+/* Animation keyframes for moving columns */
+@keyframes moveUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes moveDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-moveUp {
+  animation: moveUp 30s linear infinite;
+}
+
+.animate-moveDown {
+  animation: moveDown 30s linear infinite;
 }
