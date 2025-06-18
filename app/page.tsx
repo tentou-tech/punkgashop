@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroBanner from '@/assets/hero-banner.png'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import Mock2 from '@/assets/mock-2.png'
 export default function Home() {
   return (
     <main>
@@ -91,11 +92,15 @@ export default function Home() {
             <div className='relative h-full'>
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveUp absolute w-full'>
                 {[...Array(8)].map((_, index) => (
-                  <div key={`col1-${index}`} className='aspect-square w-full bg-gray-200'></div>
+                  <div key={`col1-${index}`} className='aspect-square w-full bg-gray-200'>
+                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                  </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
                 {[...Array(8)].map((_, index) => (
-                  <div key={`col1-dup-${index}`} className='aspect-square w-full bg-gray-200'></div>
+                  <div key={`col1-dup-${index}`} className='aspect-square w-full bg-gray-200'>
+                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                  </div>
                 ))}
               </div>
             </div>
@@ -104,11 +109,15 @@ export default function Home() {
             <div className='relative h-full'>
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveDown absolute w-full'>
                 {[...Array(8)].map((_, index) => (
-                  <div key={`col2-${index}`} className='aspect-square w-full bg-gray-200'></div>
+                  <div key={`col2-${index}`} className='aspect-square w-full bg-gray-200'>
+                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                  </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
                 {[...Array(8)].map((_, index) => (
-                  <div key={`col2-dup-${index}`} className='aspect-square w-full bg-gray-200'></div>
+                  <div key={`col2-dup-${index}`} className='aspect-square w-full bg-gray-200'>
+                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                  </div>
                 ))}
               </div>
             </div>
@@ -117,11 +126,15 @@ export default function Home() {
             <div className='relative h-full'>
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveUp absolute w-full'>
                 {[...Array(8)].map((_, index) => (
-                  <div key={`col3-${index}`} className='aspect-square w-full bg-gray-200'></div>
+                  <div key={`col3-${index}`} className='aspect-square w-full bg-gray-200'>
+                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                  </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
                 {[...Array(8)].map((_, index) => (
-                  <div key={`col3-dup-${index}`} className='aspect-square w-full bg-gray-200'></div>
+                  <div key={`col3-dup-${index}`} className='aspect-square w-full bg-gray-200'>
+                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                  </div>
                 ))}
               </div>
             </div>
@@ -145,7 +158,9 @@ export default function Home() {
 const Collection = () => {
   return (
     <Link href='/collection/summer-party' className='relative'>
-      <div className='w-full aspect-square bg-gray-200'></div>
+      <div className='w-full aspect-square '>
+        <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+      </div>
       <div className='self-stretch inline-flex flex-col justify-start items-start mt-2 md:mt-4'>
         <div className='self-stretch justify-start text-white text-base md:text-xl font-bold'>Bất tử collection</div>
         <div className='self-stretch inline-flex justify-start items-center gap-1'>

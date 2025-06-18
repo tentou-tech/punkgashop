@@ -6,6 +6,7 @@ import Tiktok from '@/assets/icons/tiktok'
 import X from '@/assets/icons/x'
 import Youtube from '@/assets/icons/youtube'
 import Mock from '@/assets/mock.png'
+import Mock3 from '@/assets/mock-3.png'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Minus, PlusIcon } from 'lucide-react'
@@ -15,7 +16,9 @@ import { useState } from 'react'
 export default function CollectionPage() {
   return (
     <main>
-      <div className='bg-gray-400 w-full aspect-video'></div>
+      <div className=''>
+        <Image src={Mock3} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+      </div>
       <div className='bg-black py-6 md:py-10 flex flex-col items-center justify-center gap-4 md:gap-7'>
         <div className='text-center justify-start text-white text-xl md:text-2xl font-bold'>FOLLOW US</div>
         <div className='flex gap-4 md:gap-8 items-center justify-center'>
@@ -53,7 +56,7 @@ const Product = () => {
           <div className='text-center justify-center text-[#09090a] text-[10px] md:text-xs font-bold'>Pre order</div>
         </div>
       </div>
-      <div className='w-full aspect-square bg-gray-200 relative'>
+      <div className='w-full aspect-square relative'>
         <div className='add-to-cart absolute bottom-2.5 right-2.5 hidden'>
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
@@ -133,6 +136,7 @@ const Product = () => {
             </DialogContent>
           </Dialog>
         </div>
+        <Image src={Mock} alt='Product' width={500} height={500} className='object-cover w-full h-full' />
       </div>
       <div>
         <div className='self-stretch justify-start text-white text-sm md:text-base font-bold mt-3 md:mt-6'>
