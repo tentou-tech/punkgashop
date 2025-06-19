@@ -1,9 +1,11 @@
 'use client'
-import Mock from '@/assets/mock.png'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { CartItem } from '@/models/shop'
+import { useCart } from '@/provider/cart'
+import { formatCurrency } from '@/utils/number'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
@@ -31,6 +33,7 @@ export default function Checkout() {
   const onError = (errors: unknown) => {
     console.error(errors)
   }
+  const { items } = useCart()
 
   return (
     <div className='py-8 px-4 md:px-6 space-y-6 max-w-[1400px] overflow-hidden mx-auto grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8'>
@@ -112,14 +115,14 @@ export default function Checkout() {
       </form>
       <div className='space-y-4 overflow-hidden order-1 md:order-2'>
         <div className='max-h-[calc(100vh-24rem)] space-y-4 overflow-y-scroll'>
-          {[...Array(10)].map((_, index) => (
-            <CheckoutItem key={index} />
+          {items.map((item) => (
+            <CheckoutItem key={item.internalId} item={item} />
           ))}
         </div>
         <div className='space-y-3 text-sm text-Text-Default-text-tertiary'>
           <div className='flex items-center justify-between'>
             <span>Subtotal</span>
-            <span>250.000 VNĐ</span>
+            <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0))}</span>
           </div>
           <div className='flex items-center justify-between'>
             <span>Shipping fee</span>
@@ -132,25 +135,39 @@ export default function Checkout() {
           <div className='h-px w-full bg-Border-border-primary'></div>
           <div className='flex items-center justify-between text-white text-lg font-bold'>
             <span>Total</span>
-            <span className='inline-flex items-center gap-2'>250.000 VNĐ</span>
+            <span className='inline-flex items-center gap-2'>
+              {formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0))}
+            </span>
           </div>
         </div>
       </div>
     </div>
   )
 }
-const CheckoutItem = () => {
+const CheckoutItem = ({ item }: { item: CartItem }) => {
   return (
     <div className='flex gap-4 items-center overflow-hidden'>
-      <Image src={Mock} alt='Product' width={100} height={100} className='w-14 h-14 object-cover shrink-0' />
+      <Image
+        src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${item.product.thumbnail}`}
+        alt='Product'
+        width={100}
+        height={100}
+        className='w-14 h-14 object-cover shrink-0'
+      />
       <div className='space-y-0.5 flex-1 overflow-hidden'>
         <div className='text-sm font-medium flex overflow-hidden items-center'>
-          <span className='whitespace-nowrap overflow-hidden truncate'>Polo thể thao nam Promax Sideflow</span>
-          <span className='ml-1 text-xs text-Text-Default-text-tertiary'>x3</span>
+          <span className='whitespace-nowrap overflow-hidden truncate'>{item.product.name}</span>
+          <span className='ml-1 text-xs text-Text-Default-text-tertiary'>x{item.quantity}</span>
         </div>
-        <div className='text-xs capitalize text-Text-Default-text-tertiary'>S, White</div>
+        <div className='text-xs capitalize text-Text-Default-text-tertiary'>
+          {Object.keys(item.option.option)
+            .filter((key) => typeof item.option.option[key as keyof typeof item.option.option] === 'string')
+            .map((key) => item.option.option[key as keyof typeof item.option.option])
+            .concat(item.option.subOptions.map((subOption) => subOption.value))
+            .join(', ')}
+        </div>
       </div>
-      <div className='shrink-0 text-sm'>250.000 VNĐ</div>
+      <div className='shrink-0 text-sm'>{formatCurrency(item.option.price * item.quantity)}</div>
     </div>
   )
 }

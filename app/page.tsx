@@ -1,8 +1,8 @@
-import Image from "next/image";
 import HeroBanner from '@/assets/hero-banner.png'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import Mock2 from '@/assets/mock-2.png'
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import AllCollection from './components/all-collection'
 export default function Home() {
   return (
     <main>
@@ -141,37 +141,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='p-4 md:p-6 space-y-4 md:space-y-6'>
-        <div>
-          <h1 className='text-2xl md:text-3xl font-bold'>All Collections</h1>
-        </div>
-
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-6'>
-          {[...Array(36)].map((_, index) => (
-            <Collection key={index} />
-          ))}
-        </div>
-      </div>
+      <AllCollection />
     </main>
-  )
-}
-const Collection = () => {
-  return (
-    <Link href='/collection/summer-party' className='relative'>
-      <div className='w-full aspect-square '>
-        <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
-      </div>
-      <div className='self-stretch inline-flex flex-col justify-start items-start mt-2 md:mt-4'>
-        <div className='self-stretch justify-start text-white text-base md:text-xl font-bold'>Bất tử collection</div>
-        <div className='self-stretch inline-flex justify-start items-center gap-1'>
-          <div className='justify-start text-[#9091a0] text-xs md:text-sm font-normal'>by</div>
-          <div className='justify-start text-white text-xs md:text-sm font-normal'>Artist Name</div>
-        </div>
-      </div>
-      <div className='self-stretch justify-start text-[#9091a0] text-xs md:text-sm font-normal mt-2 md:mt-3 line-clamp-2 md:line-clamp-3'>
-        Tứ Bất Tử | TiredCity x Simple.handxăm Bộ sưu tập &quot;Tứ Bất Tử&quot; khắc hoa hình anh bon vị Thanh bat tử
-        trong tin ngưong dân gian Việt Nam. Họ là những vị Thánh sống mãi trong tâm thức của người ...
-      </div>
-    </Link>
   )
 }

@@ -13,8 +13,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import { useState } from 'react'
+import { useCart } from '@/provider/cart'
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { items } = useCart()
   return (
     <header className='sticky top-0 z-50 border-b border-Border-border-teriary bg-Surface-Background-bg-body px-6 py-4 flex items-center justify-between'>
       <div className='flex items-center gap-10'>
@@ -53,12 +55,12 @@ export default function Header() {
         </div>
       </div>
       <div className='flex gap-6 items-center'>
-        <div className='relative'>
+        <Link href='/cart' className='relative'>
           <ShoppingBag className='w-6 h-6' />
           <div className='absolute rounded-full -bottom-1 -right-1 w-4 h-4 flex items-center justify-center bg-Components-Utility-red-utility-red border-2 border-Border-border-teriary text-[10px] text-white'>
-            1
+            {items.reduce((total, item) => total + item.quantity, 0)}
           </div>
-        </div>
+        </Link>
         <Search className='w-6 h-6' />
         <Button className='hidden md:flex'>Login</Button>
         {/* Mobile Menu Button - Only visible on mobile */}
