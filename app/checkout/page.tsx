@@ -33,7 +33,7 @@ export default function Checkout() {
   const onError = (errors: unknown) => {
     console.error(errors)
   }
-  const { items } = useCart()
+  const { checkoutItems } = useCart()
 
   return (
     <div className='py-8 px-4 md:px-6 space-y-6 max-w-[1400px] overflow-hidden mx-auto grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8'>
@@ -115,14 +115,16 @@ export default function Checkout() {
       </form>
       <div className='space-y-4 overflow-hidden order-1 md:order-2'>
         <div className='max-h-[calc(100vh-24rem)] space-y-4 overflow-y-scroll'>
-          {items.map((item) => (
+          {checkoutItems.map((item) => (
             <CheckoutItem key={item.internalId} item={item} />
           ))}
         </div>
         <div className='space-y-3 text-sm text-Text-Default-text-tertiary'>
           <div className='flex items-center justify-between'>
             <span>Subtotal</span>
-            <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0))}</span>
+            <span>
+              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0))}
+            </span>
           </div>
           <div className='flex items-center justify-between'>
             <span>Shipping fee</span>
@@ -136,7 +138,7 @@ export default function Checkout() {
           <div className='flex items-center justify-between text-white text-lg font-bold'>
             <span>Total</span>
             <span className='inline-flex items-center gap-2'>
-              {formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0))}
+              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0))}
             </span>
           </div>
         </div>

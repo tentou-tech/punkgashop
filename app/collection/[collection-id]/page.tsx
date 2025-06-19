@@ -62,6 +62,7 @@ export default function CollectionPage() {
 
 const Product = ({ product }: { product: ProductCollectionDetail['products'][number] }) => {
   const [quantity, setQuantity] = useState(1)
+  const params = useParams()
   const [open, setOpen] = useState(false)
   const { addItem, setCheckoutItems } = useCart()
   const { push } = useRouter()
@@ -118,7 +119,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
   }
   return (
     <div
-      onClick={() => push('/collection/summer-party/product/tee-shirt')}
+      onClick={() => push(`/collection/${params['collection-id']}/product/${product.id}`)}
       className='relative pb-4 md:pb-6 [&:hover_.add-to-cart]:block cursor-pointer'>
       <div className='h-5 md:h-6 px-1 py-0.5 bg-[#00e160] rounded-xs inline-flex justify-center items-center absolute top-2 left-2'>
         <div className='px-1 flex justify-center items-center gap-2'>
