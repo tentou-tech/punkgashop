@@ -1,0 +1,106 @@
+{
+  "header": {
+    "login": "Đăng nhập"
+  },
+  "shippingPolicy": {
+    "title": "Chính sách giao hàng & đổi trả",
+    "deliveryTitle": "Thời gian:",
+    "deliveryContent": "Tùy theo khu vực và đối tác vận chuyển tại thời điểm xử lý đơn hàng.",
+    "feeTitle": "Phí giao hàng:",
+    "feeContent": "Dựa trên khu vực & khối lượng.",
+    "returnTitle": "Chính sách đổi trả",
+    "eligibleTitle": "A. Trường hợp chấp nhận đổi/trả:",
+    "defectiveProduct": "Sản phẩm bị lỗi kỹ thuật hoặc hư hỏng khi vận chuyển",
+    "wrongItem": "Giao nhầm mẫu, size, màu",
+    "conditionsTitle": "B. Điều kiện áp dụng:",
+    "unusedProduct": "Sản phẩm chưa qua sử dụng, còn nguyên tem mác",
+    "unboxingVideo": "Có video mở hàng nếu cần thiết để xác minh",
+    "processTitle": "C. Quy trình xử lý:",
+    "contactUs": "Liên hệ với PunkgaShop qua email hoặc hotline",
+    "returnItem": "Gửi sản phẩm về địa chỉ được hướng dẫn",
+    "inspection": "Chúng tôi sẽ kiểm tra và xử lý trong vòng 3–5 ngày làm việc",
+    "refundTitle": "D. Hoàn tiền:",
+    "fullRefund": "Hoàn tiền 100% nếu không còn sản phẩm thay thế",
+    "refundMethod": "Hoàn qua chuyển khoản ngân hàng",
+    "processingTime": "Thời gian xử lý: 3–7 ngày làm việc"
+  },
+  "footer": {
+    "privacy": "Quyền riêng tư",
+    "termOfService": "Điều khoản dịch vụ",
+    "privacyPolicy": "Chính sách bảo mật",
+    "paymentPolicy": "Chính sách thanh toán",
+    "shippingPolicy": "Chính sách giao hàng & đổi trả",
+    "allRightsReserved": "Tất cả các quyền được bảo lưu"
+  },
+  "paymentPolicy": {
+    "title": "Chính sách thanh toán",
+    "supportedMethods": "Hình thức thanh toán hỗ trợ:",
+    "bankTransfer": "Chuyển khoản ngân hàng",
+    "eWallets": "Ví điện tử (nếu có)",
+    "displayInfo": "Thông tin thanh toán được hiển thị rõ ràng trước khi xác nhận đơn hàng."
+  },
+  "termOfService": {
+    "title": "Điều khoản sử dụng",
+    "intro": "Khi truy cập vào PunkgaShop.com, bạn đồng ý với các điều khoản sau:",
+    "noIllegalUse": "Không sử dụng website cho mục đích vi phạm pháp luật",
+    "noInterference": "Không phá hoại, tấn công hoặc can thiệp vào hệ thống",
+    "ownership": "Tất cả nội dung và hình ảnh thuộc sở hữu của PunkgaShop",
+    "disputes": "Mọi tranh chấp phát sinh được giải quyết theo pháp luật Việt Nam"
+  },
+  "privacyPolicy": {
+    "title": "Chính sách bảo mật thông tin cá nhân",
+    "intro": "PunkgaShop cam kết bảo mật tuyệt đối thông tin cá nhân của khách hàng theo quy định pháp luật.",
+    "purpose": "1. Mục đích thu thập: Xử lý đơn hàng, giao hàng, chăm sóc khách hàng, gửi thông tin khuyến mãi (nếu đồng ý).",
+    "dataCollected": "2. Thông tin thu thập: Họ tên, số điện thoại, email, địa chỉ giao hàng.",
+    "usageScope": "3. Phạm vi sử dụng: Nội bộ hoặc chia sẻ với đơn vị vận chuyển.",
+    "retentionPeriod": "4. Thời gian lưu trữ: Cho đến khi khách yêu cầu xóa hoặc không hoạt động trong 12 tháng.",
+    "security": "5. Bảo mật: Không chia sẻ cho bên thứ ba trừ khi có yêu cầu từ cơ quan nhà nước.",
+    "contact": "6. Liên hệ:",
+    "email": "Email: support@punkga.me,",
+    "hotline": "Hotline: +84 961 292 594."
+  },
+  "collection": {
+    "followUs": "THEO DÕI CHÚNG TÔI",
+    "shop": "Cửa hàng",
+    "quantity": "Số lượng",
+    "addToCart": "Thêm vào giỏ",
+    "checkout": "Thanh toán",
+    "preOrder": "Đặt trước"
+  },
+  "product": {
+    "quantity": "Số lượng",
+    "addToCart": "Thêm vào giỏ",
+    "buyNow": "Mua ngay"
+  },
+  "cart": {
+    "cart": "Giỏ hàng",
+    "subtotal": "Tạm tính",
+    "shippingFee": "Phí vận chuyển",
+    "free": "Miễn phí",
+    "discount": "Giảm giá",
+    "total": "Tổng cộng",
+    "checkout": "Thanh toán",
+    "remove": "Xóa"
+  },
+  "checkout": {
+    "contact": "Liên hệ",
+    "email": "Email",
+    "emailPlaceholder": "example@mail.com",
+    "emailTrackingInfo": "Thông tin theo dõi đơn hàng sẽ được gửi qua Email",
+    "delivery": "Giao hàng",
+    "name": "Họ tên",
+    "namePlaceholder": "Nguyễn Văn A",
+    "phone": "Số điện thoại",
+    "phonePlaceholder": "0123456789",
+    "address": "Địa chỉ",
+    "addressPlaceholder": "123 Đường ABC",
+    "note": "Ghi chú",
+    "notePlaceholder": "Ghi chú",
+    "payNow": "Thanh toán ngay",
+    "or": "hoặc",
+    "continueShopping": "Tiếp tục mua sắm"
+  },
+  "common": {
+    "currency": "VNĐ"
+  }
+}

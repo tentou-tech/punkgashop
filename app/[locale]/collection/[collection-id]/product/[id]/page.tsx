@@ -8,9 +8,11 @@ import { formatCurrency } from '@/utils/number'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Minus, PlusIcon } from 'lucide-react'
 import Image from 'next/image'
-import { useParams, useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
+import { useParams } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 import useSWR from 'swr'
+import { useTranslations } from 'next-intl'
 export default function ProductPage() {
   const params = useParams()
   const productId = params.id
@@ -45,6 +47,8 @@ export default function ProductPage() {
   )
 }
 function ProductDetail({ data }: { data: ProductDetailType }) {
+  const t = useTranslations('product')
+  const commonT = useTranslations('common')
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({ loop: true })
   const { addItem, setCheckoutItems } = useCart()
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -188,7 +192,7 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
             <div className='self-stretch justify-start text-white text-3xl font-medium'>{data?.name}</div>
             <div className='self-stretch inline-flex justify-start items-center gap-1'>
               <div className='justify-start text-[#d9d9de] text-xl font-normal'>
-                {formatCurrency(selectedOption.price || 0)}
+                {formatCurrency(selectedOption.price || 0, commonT('currency'))}
               </div>
             </div>
           </div>
@@ -234,7 +238,7 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
             )
           })}
           <div className='space-y-3'>
-            <div className='text-sm text-text-secondary capitalize'>Quantity</div>
+            <div className='text-sm text-text-secondary capitalize'>{t('quantity')}</div>
             <div className='flex items-center gap-2 border rounded-xs w-fit'>
               <button
                 onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
@@ -251,13 +255,13 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
             className='text-sm text-Text-Default-text-secondary'
             dangerouslySetInnerHTML={{ __html: data.description }}></div>
           <div className='grid grid-cols-2 gap-4'>
-            <Button onClick={() => addItem(data, quantity, selectedOption)}>Add to cart</Button>
+            <Button onClick={() => addItem(data, quantity, selectedOption)}>{t('addToCart')}</Button>
             <Button
               onClick={() => {
                 setCheckoutItems([{ product: data, quantity, option: selectedOption }])
                 push('/checkout')
               }}>
-              Buy now
+              {t('buyNow')}
             </Button>
           </div>
         </div>

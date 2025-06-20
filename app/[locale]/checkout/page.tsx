@@ -7,8 +7,9 @@ import { CartItem } from '@/models/shop'
 import { useCart } from '@/provider/cart'
 import { formatCurrency } from '@/utils/number'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useForm } from 'react-hook-form'
+import { useTranslations } from 'next-intl'
 
 interface Inputs {
   email: string
@@ -18,6 +19,9 @@ interface Inputs {
   note?: string
 }
 export default function Checkout() {
+  const t = useTranslations('checkout')
+  const cartT = useTranslations('cart')
+  const commonT = useTranslations('common')
   const {
     register,
     handleSubmit,
@@ -39,15 +43,15 @@ export default function Checkout() {
     <div className='py-8 px-4 md:px-6 space-y-6 max-w-[1400px] overflow-hidden mx-auto grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8'>
       <form onSubmit={handleSubmit(onSubmit, onError)} className='space-y-8 order-2 md:order-1'>
         <div className='space-y-4'>
-          <div className='text-xl font-bold'>Contact</div>
+          <div className='text-xl font-bold'>{t('contact')}</div>
           <div className='grid w-full items-center gap-2'>
             <Label htmlFor='email'>
-              Email <span className='text-red-500'>*</span>
+              {t('email')} <span className='text-red-500'>*</span>
             </Label>
             <Input
               type='email'
               id='email'
-              placeholder='example@mail.com'
+              placeholder={t('emailPlaceholder')}
               required
               {...register('email', {
                 required: 'Email is required',
@@ -57,59 +61,59 @@ export default function Checkout() {
                 },
               })}
             />
-            <span className='text-xs text-[#9091A0]'>Order tracking will be sent via Email</span>
+            <span className='text-xs text-[#9091A0]'>{t('emailTrackingInfo')}</span>
           </div>
         </div>
         <div className='space-y-4'>
-          <div className='text-xl font-bold'>Delivery</div>
+          <div className='text-xl font-bold'>{t('delivery')}</div>
 
           <div className='grid w-full items-center gap-2'>
             <Label htmlFor='name'>
-              Name <span className='text-red-500'>*</span>
+              {t('name')} <span className='text-red-500'>*</span>
             </Label>
             <Input
               type='text'
               id='name'
-              placeholder='John'
+              placeholder={t('namePlaceholder')}
               required
               {...register('name', { required: 'Name is required' })}
             />
           </div>
           <div className='grid w-full items-center gap-2'>
             <Label htmlFor='phone'>
-              Phone number <span className='text-red-500'>*</span>
+              {t('phone')} <span className='text-red-500'>*</span>
             </Label>
             <Input
               type='text'
               id='phone'
-              placeholder='123-456-7890'
+              placeholder={t('phonePlaceholder')}
               required
               {...register('phone', { required: 'Phone number is required' })}
             />
           </div>
           <div className='grid w-full items-center gap-2'>
             <Label htmlFor='address'>
-              Address <span className='text-red-500'>*</span>
+              {t('address')} <span className='text-red-500'>*</span>
             </Label>
             <Input
               type='text'
               id='address'
-              placeholder='123 Main St'
+              placeholder={t('addressPlaceholder')}
               required
               {...register('address', { required: 'Address is required' })}
             />
           </div>
           <div className='grid w-full items-center gap-2'>
-            <Label htmlFor='note'>Note</Label>
-            <Textarea id='note' placeholder='Note' {...register('note')} />
+            <Label htmlFor='note'>{t('note')}</Label>
+            <Textarea id='note' placeholder={t('notePlaceholder')} {...register('note')} />
           </div>
 
           <Button className='w-full justify-center' type='submit'>
-            Pay now
+            {t('payNow')}
           </Button>
-          <div className='text-center w-full'>or</div>
+          <div className='text-center w-full'>{t('or')}</div>
           <Link href='/' className='mx-auto block text-center text-brand hover:text-brand/80'>
-            Continue shopping
+            {t('continueShopping')}
           </Link>
         </div>
       </form>
@@ -121,24 +125,24 @@ export default function Checkout() {
         </div>
         <div className='space-y-3 text-sm text-Text-Default-text-tertiary'>
           <div className='flex items-center justify-between'>
-            <span>Subtotal</span>
+            <span>{cartT('subtotal')}</span>
             <span>
-              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0))}
+              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}
             </span>
           </div>
           <div className='flex items-center justify-between'>
-            <span>Shipping fee</span>
-            <span>Free</span>
+            <span>{cartT('shippingFee')}</span>
+            <span>{cartT('free')}</span>
           </div>
           <div className='flex items-center justify-between'>
-            <span>Discount</span>
-            <span>-0 VNĐ</span>
+            <span>{cartT('discount')}</span>
+            <span>-0 {commonT('currency')}</span>
           </div>
           <div className='h-px w-full bg-Border-border-primary'></div>
           <div className='flex items-center justify-between text-white text-lg font-bold'>
-            <span>Total</span>
+            <span>{cartT('total')}</span>
             <span className='inline-flex items-center gap-2'>
-              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0))}
+              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}
             </span>
           </div>
         </div>
@@ -147,6 +151,7 @@ export default function Checkout() {
   )
 }
 const CheckoutItem = ({ item }: { item: CartItem }) => {
+  const commonT = useTranslations('common')
   return (
     <div className='flex gap-4 items-center overflow-hidden'>
       <Image
@@ -169,7 +174,7 @@ const CheckoutItem = ({ item }: { item: CartItem }) => {
             .join(', ')}
         </div>
       </div>
-      <div className='shrink-0 text-sm'>{formatCurrency(item.option.price * item.quantity)}</div>
+      <div className='shrink-0 text-sm'>{formatCurrency(item.option.price * item.quantity, commonT('currency'))}</div>
     </div>
   )
 }

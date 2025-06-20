@@ -7,9 +7,9 @@ import X from '@/assets/icons/x'
 import Youtube from '@/assets/icons/youtube'
 import { getCollectionById } from '@/services/shop'
 import Image from 'next/image'
-import { useParams } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 import useSWR from 'swr'
-
+import { useParams } from 'next/navigation'
 import Mock from '@/assets/mock.png'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
@@ -18,9 +18,10 @@ import { ProductCollectionDetail } from '@/models/shop'
 import { useCart } from '@/provider/cart'
 import { formatCurrency } from '@/utils/number'
 import { Minus, PlusIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 export default function CollectionPage() {
+  const t = useTranslations('collection')
   const params = useParams()
   const collectionId = Number(params['collection-id'])
   const { data } = useSWR({ key: 'getCollectionById', id: collectionId }, ({ id }) => getCollectionById(id))
@@ -36,7 +37,7 @@ export default function CollectionPage() {
         />
       </div>
       <div className='bg-black py-6 md:py-10 flex flex-col items-center justify-center gap-4 md:gap-7'>
-        <div className='text-center justify-start text-white text-xl md:text-2xl font-bold'>FOLLOW US</div>
+        <div className='text-center justify-start text-white text-xl md:text-2xl font-bold'>{t('followUs')}</div>
         <div className='flex gap-4 md:gap-8 items-center justify-center'>
           <Discord className='w-5 h-5 md:w-6 md:h-6' />
           <Facebook className='w-5 h-5 md:w-6 md:h-6' />
@@ -48,7 +49,7 @@ export default function CollectionPage() {
       </div>
       <div className='p-4 md:p-6 space-y-4 md:space-y-6'>
         <div className='flex items-center justify-between'>
-          <h1 className='text-2xl md:text-3xl font-bold'>Shop</h1>
+          <h1 className='text-2xl md:text-3xl font-bold'>{t('shop')}</h1>
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-6'>
           {data?.products.map((product, index) => (
@@ -61,6 +62,8 @@ export default function CollectionPage() {
 }
 
 const Product = ({ product }: { product: ProductCollectionDetail['products'][number] }) => {
+  const t = useTranslations('collection')
+  const commonT = useTranslations('common')
   const [quantity, setQuantity] = useState(1)
   const params = useParams()
   const [open, setOpen] = useState(false)
@@ -123,7 +126,9 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
       className='relative pb-4 md:pb-6 [&:hover_.add-to-cart]:block cursor-pointer'>
       <div className='h-5 md:h-6 px-1 py-0.5 bg-[#00e160] rounded-xs inline-flex justify-center items-center absolute top-2 left-2'>
         <div className='px-1 flex justify-center items-center gap-2'>
-          <div className='text-center justify-center text-[#09090a] text-[10px] md:text-xs font-bold'>Pre order</div>
+          <div className='text-center justify-center text-[#09090a] text-[10px] md:text-xs font-bold'>
+            {t('preOrder')}
+          </div>
         </div>
       </div>
       <div className='w-full aspect-square relative'>
@@ -136,7 +141,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
                   e.preventDefault()
                   setOpen(true)
                 }}>
-                <PlusIcon /> Add to Cart
+                <PlusIcon /> {t('addToCart')}
               </Button>
             </DialogTrigger>
             <DialogContent
@@ -144,7 +149,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
                 e.stopPropagation()
               }}>
               <DialogHeader>
-                <DialogTitle className='hidden'>Add to Cart</DialogTitle>
+                <DialogTitle className='hidden'>{t('addToCart')}</DialogTitle>
               </DialogHeader>
               <div className='space-y-4'>
                 <div className='flex gap-3 md:gap-6 items-center'>
@@ -210,7 +215,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
                   )
                 })}
                 <div className='space-y-2 md:space-y-3'>
-                  <div className='text-xs md:text-sm text-text-secondary capitalize'>Quantity</div>
+                  <div className='text-xs md:text-sm text-text-secondary capitalize'>{t('quantity')}</div>
                   <div className='flex items-center gap-2 border w-fit rounded-xs'>
                     <button
                       className='px-2 md:px-3 py-2 md:py-2.5 cursor-pointer'
@@ -227,7 +232,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
                   <Button className='flex justify-center' onClick={() => addItem(product, quantity, selectedOption)}>
-                    Add to Cart
+                    {t('addToCart')}
                   </Button>
                   <Button
                     className='flex justify-center'
@@ -240,9 +245,9 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
                           option: selectedOption,
                         },
                       ])
-                      push('/shop/checkout')
+                      push('/checkout')
                     }}>
-                    Checkout
+                    {t('checkout')}
                   </Button>
                 </div>
               </div>
@@ -262,7 +267,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
           {product.name}
         </div>
         <div className='justify-start text-[#d9d9de] text-xs md:text-sm font-normal'>
-          {formatCurrency(product.lowest_price, 'VNĐ')}
+          {formatCurrency(product.lowest_price, commonT('currency'))}
         </div>
       </div>
     </div>

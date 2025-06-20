@@ -5,8 +5,11 @@ import { useCart } from '@/provider/cart'
 import { formatCurrency } from '@/utils/number'
 import { ChevronLeft, Minus, Plus, Trash } from 'lucide-react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 export default function Checkout() {
+  const t = useTranslations('cart')
+  const commonT = useTranslations('common')
   const router = useRouter()
   const { items } = useCart()
   const { back } = useRouter()
@@ -15,7 +18,7 @@ export default function Checkout() {
       <div className='space-y-8'>
         <button onClick={back} className='text-xl cursor-pointer flex items-center gap-2 font-bold'>
           <ChevronLeft className='w-5 h-5' />
-          Cart (1)
+          {t('cart')} ({items.length})
         </button>
         <>
           {items.map((item) => (
@@ -25,34 +28,36 @@ export default function Checkout() {
       </div>
       <div className='p-6 bg-[#121212] h-fit space-y-3 text-[#9091A0] border text-sm'>
         <div className='flex items-center justify-between text-xs md:text-sm'>
-          <span>Subtotal</span>
-          <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0))}</span>
+          <span>{t('subtotal')}</span>
+          <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}</span>
         </div>
         <div className='flex items-center justify-between text-xs md:text-sm'>
-          <span>Shipping fee</span>
-          <span>Free</span>
+          <span>{t('shippingFee')}</span>
+          <span>{t('free')}</span>
         </div>
         <div className='flex items-center justify-between text-xs md:text-sm'>
-          <span>Discount</span>
-          <span>-0 VNĐ</span>
+          <span>{t('discount')}</span>
+          <span>-0 {commonT('currency')}</span>
         </div>
         <div className='h-px w-full bg-Border-border-primary'></div>
         <div className='flex items-center justify-between text-white text-base ms:text-lg font-bold '>
-          <span>Total</span>
-          <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0))}</span>
+          <span>{t('total')}</span>
+          <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}</span>
         </div>
         <Button
           className='w-full justify-center'
           onClick={() => {
             router.push('/checkout')
           }}>
-          Checkout
+          {t('checkout')}
         </Button>
       </div>
     </div>
   )
 }
 const CheckoutItem = ({ item }: { item: CartItem }) => {
+  const t = useTranslations('cart')
+  const commonT = useTranslations('common')
   const { removeItem, updateQuantity } = useCart()
 
   return (
@@ -68,7 +73,7 @@ const CheckoutItem = ({ item }: { item: CartItem }) => {
         <div className='space-y-2'>
           <div className='font-medium text-sm md:text-lg'>{item.product.name}</div>
           <div className='flex items-center gap-2 text-xs md:text-sm'>
-            <span>{formatCurrency(item.option.price)}</span>
+            <span>{formatCurrency(item.option.price, commonT('currency'))}</span>
           </div>
           <div className='capitalize text-sm h-[22px] inline-flex justify-start items-center gap-1.5'>
             {Object.keys(item.option.option)
@@ -81,7 +86,7 @@ const CheckoutItem = ({ item }: { item: CartItem }) => {
             onClick={() => removeItem(item.internalId!)}
             className='flex items-center gap-1 text-[#9091A0] hover:text-red-500 cursor-pointer text-xs md:text-sm'>
             <Trash className='w-5 h-5' />
-            Remove
+            {t('remove')}
           </div>
         </div>
       </div>
@@ -102,7 +107,7 @@ const CheckoutItem = ({ item }: { item: CartItem }) => {
       </div>
       <div className='md:hidden'></div>
       <div className='flex items-center gap-2 justify-end whitespace-nowrap'>
-        <span>{formatCurrency(item.option.price * item.quantity)}</span>
+        <span>{formatCurrency(item.option.price * item.quantity, commonT('currency'))}</span>
       </div>
     </div>
   )

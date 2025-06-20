@@ -1,0 +1,106 @@
+{
+  "header": {
+    "login": "Login"
+  },
+  "shippingPolicy": {
+    "title": "Shipping & Return Policy",
+    "deliveryTitle": "Delivery Time:",
+    "deliveryContent": "Depending on location and our delivery partners at the time of order processing.",
+    "feeTitle": "Fee:",
+    "feeContent": "Based on region and weight.",
+    "returnTitle": "Return & Refund Policy",
+    "eligibleTitle": "A. Eligible Return/Exchange Cases:",
+    "defectiveProduct": "Defective product or damage during shipping",
+    "wrongItem": "Wrong item, size, or color delivered",
+    "conditionsTitle": "B. Conditions:",
+    "unusedProduct": "Product must be unused and have original tags intact",
+    "unboxingVideo": "Unboxing video may be required for verification",
+    "processTitle": "C. Process:",
+    "contactUs": "Contact PunkgaShop via email or hotline",
+    "returnItem": "Return the item as instructed",
+    "inspection": "We will inspect and process within 3–5 business days",
+    "refundTitle": "D. Refund:",
+    "fullRefund": "100% refund if no replacement is available",
+    "refundMethod": "Refunds are processed via bank transfer",
+    "processingTime": "Processing time: 3–7 business days."
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "termOfService": "Term of service",
+    "privacyPolicy": "Privacy policy",
+    "paymentPolicy": "Payment policy",
+    "shippingPolicy": "Shipping & Return Policy",
+    "allRightsReserved": "All rights reserved"
+  },
+  "paymentPolicy": {
+    "title": "Payment Policy",
+    "supportedMethods": "Supported payment methods:",
+    "bankTransfer": "Bank Transfer",
+    "eWallets": "E-wallets (if applicable)",
+    "displayInfo": "All payment details will be clearly displayed before you confirm your order."
+  },
+  "termOfService": {
+    "title": "Terms of Use",
+    "intro": "By using PunkgaShop.com, you agree to the following:",
+    "noIllegalUse": "Do not use the website for illegal or fraudulent activities",
+    "noInterference": "Do not damage, interfere with, or attack the system",
+    "ownership": "All content and images belong to PunkgaShop",
+    "disputes": "Disputes will be handled in accordance with Vietnamese law"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "intro": "PunkgaShop is committed to protecting customers' personal data in compliance with Vietnamese law.",
+    "purpose": "1. Purpose: Order processing, delivery, customer support, promotions (with consent).",
+    "dataCollected": "2. Data Collected: Full name, phone number, email, shipping address.",
+    "usageScope": "3. Usage Scope: Internal use or with shipping partners only.",
+    "retentionPeriod": "4. Retention Period: Until deletion request or 12 months of inactivity.",
+    "security": "5. Security: No third-party sharing unless required by law.",
+    "contact": "6. Contact:",
+    "email": "Email: support@punkga.me,",
+    "hotline": "Hotline: +84 961 292 594."
+  },
+  "collection": {
+    "followUs": "FOLLOW US",
+    "shop": "Shop",
+    "quantity": "Quantity",
+    "addToCart": "Add to Cart",
+    "checkout": "Checkout",
+    "preOrder": "Pre order"
+  },
+  "product": {
+    "quantity": "Quantity",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now"
+  },
+  "cart": {
+    "cart": "Cart",
+    "subtotal": "Subtotal",
+    "shippingFee": "Shipping fee",
+    "free": "Free",
+    "discount": "Discount",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove"
+  },
+  "checkout": {
+    "contact": "Contact",
+    "email": "Email",
+    "emailPlaceholder": "example@mail.com",
+    "emailTrackingInfo": "Order tracking will be sent via Email",
+    "delivery": "Delivery",
+    "name": "Name",
+    "namePlaceholder": "John",
+    "phone": "Phone number",
+    "phonePlaceholder": "123-456-7890",
+    "address": "Address",
+    "addressPlaceholder": "123 Main St",
+    "note": "Note",
+    "notePlaceholder": "Note",
+    "payNow": "Pay now",
+    "or": "or",
+    "continueShopping": "Continue shopping"
+  },
+  "common": {
+    "currency": "VNĐ"
+  }
+}
