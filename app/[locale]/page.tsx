@@ -1,9 +1,75 @@
 import HeroBanner from '@/assets/hero-banner.png'
-import Mock2 from '@/assets/mock-2.png'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import AllCollection from './components/all-collection'
+
+// Mock images imports
+import BoredgaylordFront01 from '@/assets/mock/Boredgaylord front 01.png'
+import BoredgaylordFront02 from '@/assets/mock/Boredgaylord front 02.png'
+import BoredgaylordFront03 from '@/assets/mock/Boredgaylord front 03.png'
+import BoredgaylordFront04 from '@/assets/mock/Boredgaylord front 04.png'
+import BoredgaylordFront05 from '@/assets/mock/Boredgaylord front 05.png'
+import BoredgaylordFront06 from '@/assets/mock/Boredgaylord front 06.png'
+import HCC01Back from '@/assets/mock/HCC 01 back.png'
+import HCC01Front from '@/assets/mock/HCC 01 front.png'
+import HCC02Back from '@/assets/mock/HCC 02 back.png'
+import HCC02Front from '@/assets/mock/HCC 02 front.png'
+import MirolesWBack01 from '@/assets/mock/MirolesW back 01.png'
+import MirolesWBack02 from '@/assets/mock/MirolesW back 02.png'
+import MirolesWBack03 from '@/assets/mock/MirolesW back 03.png'
+import MirolesWFront01 from '@/assets/mock/MirolesW front 01.png'
+import MirolesWFront02 from '@/assets/mock/MirolesW front 02.png'
+import MirolesWFront03 from '@/assets/mock/MirolesW front 03.png'
+import MoffiBack01 from '@/assets/mock/Moffi back 01.png'
+import MoffiBack02 from '@/assets/mock/Moffi back 02.png'
+import MoffiFront01 from '@/assets/mock/Moffi front 01.png'
+import MoffiFront02 from '@/assets/mock/Moffi front 02.png'
+import XaviaNgBack01 from '@/assets/mock/XaviaNg back 01.png'
+import XaviaNgBack02 from '@/assets/mock/XaviaNg back 02.png'
+import XaviaNgBack03 from '@/assets/mock/XaviaNg back 03.png'
+import XaviaNgBack04 from '@/assets/mock/XaviaNg back 04.png'
+import XaviaNgFront01 from '@/assets/mock/XaviaNg front 01.png'
+import XaviaNgFront02 from '@/assets/mock/XaviaNg front 02.png'
+import XaviaNgFront03 from '@/assets/mock/XaviaNg front 03.png'
+
 export default function Home() {
+  // Organize images into 3 columns with equal number of images (9 each)
+  const column1Images = [
+    BoredgaylordFront01,
+    BoredgaylordFront02,
+    BoredgaylordFront03,
+    BoredgaylordFront04,
+    BoredgaylordFront05,
+    BoredgaylordFront06,
+    HCC01Back,
+    HCC01Front,
+    HCC02Back,
+  ]
+
+  const column2Images = [
+    HCC02Front,
+    MoffiBack01,
+    MoffiBack02,
+    MoffiFront01,
+    MoffiFront02,
+    MirolesWBack01,
+    MirolesWBack02,
+    MirolesWBack03,
+    MirolesWFront01,
+  ]
+
+  const column3Images = [
+    MirolesWFront02,
+    MirolesWFront03,
+    XaviaNgBack01,
+    XaviaNgBack02,
+    XaviaNgBack03,
+    XaviaNgBack04,
+    XaviaNgFront01,
+    XaviaNgFront02,
+    XaviaNgFront03,
+  ]
+
   return (
     <main>
       <Image src={HeroBanner} alt='Hero Banner' width={2000} height={1000} className='w-full h-auto' />
@@ -91,15 +157,27 @@ export default function Home() {
             {/* First column - moves up */}
             <div className='relative h-full'>
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveUp absolute w-full'>
-                {[...Array(8)].map((_, index) => (
+                {column1Images.map((image, index) => (
                   <div key={`col1-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                    <Image
+                      src={image}
+                      alt={`Collection Image ${index + 1}`}
+                      width={2000}
+                      height={2000}
+                      className='w-full h-full object-cover'
+                    />
                   </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
-                {[...Array(8)].map((_, index) => (
+                {column1Images.map((image, index) => (
                   <div key={`col1-dup-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                    <Image
+                      src={image}
+                      alt={`Collection Image ${index + 1}`}
+                      width={2000}
+                      height={2000}
+                      className='w-full h-full object-cover'
+                    />
                   </div>
                 ))}
               </div>
@@ -108,15 +186,27 @@ export default function Home() {
             {/* Second column - moves down */}
             <div className='relative h-full'>
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveDown absolute w-full'>
-                {[...Array(8)].map((_, index) => (
+                {column2Images.map((image, index) => (
                   <div key={`col2-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                    <Image
+                      src={image}
+                      alt={`Collection Image ${index + 1}`}
+                      width={2000}
+                      height={2000}
+                      className='w-full h-full object-cover'
+                    />
                   </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
-                {[...Array(8)].map((_, index) => (
+                {column2Images.map((image, index) => (
                   <div key={`col2-dup-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                    <Image
+                      src={image}
+                      alt={`Collection Image ${index + 1}`}
+                      width={2000}
+                      height={2000}
+                      className='w-full h-full object-cover'
+                    />
                   </div>
                 ))}
               </div>
@@ -125,15 +215,27 @@ export default function Home() {
             {/* Third column - moves up */}
             <div className='relative h-full'>
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveUp absolute w-full'>
-                {[...Array(8)].map((_, index) => (
+                {column3Images.map((image, index) => (
                   <div key={`col3-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                    <Image
+                      src={image}
+                      alt={`Collection Image ${index + 1}`}
+                      width={2000}
+                      height={2000}
+                      className='w-full h-full object-cover'
+                    />
                   </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
-                {[...Array(8)].map((_, index) => (
+                {column3Images.map((image, index) => (
                   <div key={`col3-dup-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image src={Mock2} alt='Mock 2' width={2000} height={2000} className='w-full h-full object-cover' />
+                    <Image
+                      src={image}
+                      alt={`Collection Image ${index + 1}`}
+                      width={2000}
+                      height={2000}
+                      className='w-full h-full object-cover'
+                    />
                   </div>
                 ))}
               </div>
