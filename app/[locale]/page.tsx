@@ -2,6 +2,7 @@ import HeroBanner from '@/assets/hero-banner.png'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import AllCollection from './components/all-collection'
+import { useTranslations } from 'next-intl'
 
 // Mock images imports
 import BoredgaylordFront01 from '@/assets/mock/Boredgaylord front 01.png'
@@ -33,6 +34,7 @@ import XaviaNgFront02 from '@/assets/mock/XaviaNg front 02.png'
 import XaviaNgFront03 from '@/assets/mock/XaviaNg front 03.png'
 
 export default function Home() {
+  const t = useTranslations('home')
   // Organize images into 3 columns with equal number of images (9 each)
   const column1Images = [
     BoredgaylordFront01,
@@ -122,7 +124,7 @@ export default function Home() {
             />
           </svg>
           <div className='flex flex-wrap items-center gap-2 uppercase font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl'>
-            <span className='text-Text-Brand-text-brand-primary'>ARTIST</span>
+            <span className='text-Text-Brand-text-brand-primary'>{t('artist')}</span>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9'
@@ -131,7 +133,7 @@ export default function Home() {
               <path d='M1.58203 1L33 33' stroke='white' />
               <path d='M32.418 1L0.999991 33' stroke='white' />
             </svg>
-            <span>LOVE</span>
+            <span>{t('love')}</span>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9'
@@ -140,17 +142,17 @@ export default function Home() {
               <path d='M1.58203 1L33 33' stroke='white' />
               <path d='M32.418 1L0.999991 33' stroke='white' />
             </svg>
-            <span>COMMUNITY</span>
+            <span>{t('community')}</span>
           </div>
           <div className='text-Text-Default-text-secondary text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
-            Support your favorite artist
+            {t('supportArtist')}
             <span className='hidden sm:inline'>
               <br />
             </span>{' '}
             <span className='inline sm:hidden'> </span>
-            <span className='text-Text-Brand-text-brand-primary'> & </span> get more cool outfits
+            <span className='text-Text-Brand-text-brand-primary'> & </span> {t('getCoolOutfits')}
           </div>
-          <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base'>EXPORE COLLECTION</Button>
+          <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base'>{t('exploreCollection')}</Button>
         </div>
         <div className='w-full aspect-square sm:h-[400px] md:h-[500px] lg:h-[632px] pr-0 md:pr-5 overflow-hidden'>
           <div className='grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 aspect-square ml-auto h-full'>
@@ -161,7 +163,7 @@ export default function Home() {
                   <div key={`col1-${index}`} className='aspect-square w-full bg-gray-200'>
                     <Image
                       src={image}
-                      alt={`Collection Image ${index + 1}`}
+                      alt={t('collectionImage', { index: index + 1 })}
                       width={2000}
                       height={2000}
                       className='w-full h-full object-cover'
@@ -173,7 +175,7 @@ export default function Home() {
                   <div key={`col1-dup-${index}`} className='aspect-square w-full bg-gray-200'>
                     <Image
                       src={image}
-                      alt={`Collection Image ${index + 1}`}
+                      alt={t('collectionImage', { index: index + 1 })}
                       width={2000}
                       height={2000}
                       className='w-full h-full object-cover'
@@ -190,7 +192,7 @@ export default function Home() {
                   <div key={`col2-${index}`} className='aspect-square w-full bg-gray-200'>
                     <Image
                       src={image}
-                      alt={`Collection Image ${index + 1}`}
+                      alt={t('collectionImage', { index: index + 1 })}
                       width={2000}
                       height={2000}
                       className='w-full h-full object-cover'
@@ -202,7 +204,7 @@ export default function Home() {
                   <div key={`col2-dup-${index}`} className='aspect-square w-full bg-gray-200'>
                     <Image
                       src={image}
-                      alt={`Collection Image ${index + 1}`}
+                      alt={t('collectionImage', { index: index + 1 })}
                       width={2000}
                       height={2000}
                       className='w-full h-full object-cover'
@@ -219,7 +221,7 @@ export default function Home() {
                   <div key={`col3-${index}`} className='aspect-square w-full bg-gray-200'>
                     <Image
                       src={image}
-                      alt={`Collection Image ${index + 1}`}
+                      alt={t('collectionImage', { index: index + 1 })}
                       width={2000}
                       height={2000}
                       className='w-full h-full object-cover'
@@ -231,7 +233,7 @@ export default function Home() {
                   <div key={`col3-dup-${index}`} className='aspect-square w-full bg-gray-200'>
                     <Image
                       src={image}
-                      alt={`Collection Image ${index + 1}`}
+                      alt={t('collectionImage', { index: index + 1 })}
                       width={2000}
                       height={2000}
                       className='w-full h-full object-cover'

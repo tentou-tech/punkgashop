@@ -30,7 +30,11 @@
     "privacyPolicy": "Privacy policy",
     "paymentPolicy": "Payment policy",
     "shippingPolicy": "Shipping & Return Policy",
-    "allRightsReserved": "All rights reserved"
+    "allRightsReserved": "All rights reserved",
+    "companyName": "THIEN DANG SERVICE TRADE AND TECHNOLOGY JOINT STOCK COMPANY",
+    "phoneNumber": "+84 961 292 594",
+    "email": "support@punka.me",
+    "address": "24/62 Nguyen Viet Xuan, Khuong Mai, Thanh Xuan, Hanoi, Vietnam"
   },
   "paymentPolicy": {
     "title": "Payment Policy",
@@ -65,7 +69,9 @@
     "quantity": "Quantity",
     "addToCart": "Add to Cart",
     "checkout": "Checkout",
-    "preOrder": "Pre order"
+    "preOrder": "Pre order",
+    "allCollections": "All Collections",
+    "by": "by"
   },
   "product": {
     "quantity": "Quantity",
@@ -102,5 +108,14 @@
   },
   "common": {
     "currency": "VNĐ"
+  },
+  "home": {
+    "artist": "ARTIST",
+    "love": "LOVE",
+    "community": "COMMUNITY",
+    "supportArtist": "Support your favorite artist",
+    "getCoolOutfits": "get more cool outfits",
+    "exploreCollection": "EXPLORE COLLECTION",
+    "collectionImage": "Collection Image {{index}}"
   }
 }

@@ -30,7 +30,11 @@
     "privacyPolicy": "Chính sách bảo mật",
     "paymentPolicy": "Chính sách thanh toán",
     "shippingPolicy": "Chính sách giao hàng & đổi trả",
-    "allRightsReserved": "Tất cả các quyền được bảo lưu"
+    "allRightsReserved": "Tất cả các quyền được bảo lưu",
+    "companyName": "CÔNG TY CỔ PHẦN DỊCH VỤ THƯƠNG MẠI VÀ CÔNG NGHỆ THIÊN ĐÀNG",
+    "phoneNumber": "+84 961 292 594",
+    "email": "support@punka.me",
+    "address": "24/62 Nguyễn Viết Xuân, Khương Mai, Thanh Xuân, Hà Nội, Việt Nam"
   },
   "paymentPolicy": {
     "title": "Chính sách thanh toán",
@@ -65,7 +69,9 @@
     "quantity": "Số lượng",
     "addToCart": "Thêm vào giỏ",
     "checkout": "Thanh toán",
-    "preOrder": "Đặt trước"
+    "preOrder": "Đặt trước",
+    "allCollections": "Tất cả bộ sưu tập",
+    "by": "bởi"
   },
   "product": {
     "quantity": "Số lượng",
@@ -102,5 +108,14 @@
   },
   "common": {
     "currency": "VNĐ"
+  },
+  "home": {
+    "artist": "NGHỆ SĨ",
+    "love": "YÊU THÍCH",
+    "community": "CỘNG ĐỒNG",
+    "supportArtist": "Hỗ trợ nghệ sĩ yêu thích của bạn",
+    "getCoolOutfits": "nhận thêm trang phục tuyệt vời",
+    "exploreCollection": "KHÁM PHÁ BỘ SƯU TẬP",
+    "collectionImage": "Hình ảnh bộ sưu tập {{index}}"
   }
 }
