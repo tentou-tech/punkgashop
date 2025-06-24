@@ -108,7 +108,7 @@ export default function Checkout() {
             <Textarea id='note' placeholder={t('notePlaceholder')} {...register('note')} />
           </div>
 
-          <Button className='w-full justify-center' type='submit'>
+          <Button className='w-full justify-center !bg-gray-600 !text-white' type='submit'>
             {t('payNow')}
           </Button>
           <div className='text-center w-full'>{t('or')}</div>
@@ -118,7 +118,7 @@ export default function Checkout() {
         </div>
       </form>
       <div className='space-y-4 overflow-hidden order-1 md:order-2'>
-        <div className='max-h-[calc(100vh-24rem)] space-y-4 overflow-y-scroll'>
+        <div className='max-h-[calc(100vh-24rem)] space-y-4 overflow-y-scroll hidden-scrollbar'>
           {checkoutItems.map((item) => (
             <CheckoutItem key={item.internalId} item={item} />
           ))}
@@ -127,7 +127,10 @@ export default function Checkout() {
           <div className='flex items-center justify-between'>
             <span>{cartT('subtotal')}</span>
             <span>
-              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}
+              {formatCurrency(
+                checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0),
+                commonT('currency')
+              )}
             </span>
           </div>
           <div className='flex items-center justify-between'>
@@ -142,7 +145,10 @@ export default function Checkout() {
           <div className='flex items-center justify-between text-white text-lg font-bold'>
             <span>{cartT('total')}</span>
             <span className='inline-flex items-center gap-2'>
-              {formatCurrency(checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}
+              {formatCurrency(
+                checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0),
+                commonT('currency')
+              )}
             </span>
           </div>
         </div>

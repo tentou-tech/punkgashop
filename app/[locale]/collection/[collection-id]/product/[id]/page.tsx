@@ -77,7 +77,7 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
     emblaMainApi.on('select', onSelect).on('reInit', onSelect)
   }, [emblaMainApi, onSelect])
   const optionKeys = data?.product_options[0].option ? Object.keys(data.product_options[0].option) : []
-  const mainOptionKey = optionKeys.find((key) => typeof (data?.product_options[0].option as any)[key] === 'string')
+  // const mainOptionKey = optionKeys.find((key) => typeof (data?.product_options[0].option as any)[key] === 'string')
   const subOptionKeys = optionKeys.filter((key) => typeof (data?.product_options[0].option as any)[key] !== 'string')
   const [selectedOption, setSelectedOption] = useState({
     ...data?.product_options[0],
@@ -140,9 +140,9 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
           <div className='embla__viewport' ref={emblaMainRef}>
             <div className='embla__container'>
               {data?.product_images.map((image, index) => {
-                const optionId = image.product_option_id
-                const option = data?.product_options.find((opt) => opt.id === optionId)
-                const label = mainOptionKey && option ? (option?.option as any)[mainOptionKey] : ''
+                // const optionId = image.product_option_id
+                // const option = data?.product_options.find((opt) => opt.id === optionId)
+                // const label = mainOptionKey && option ? (option?.option as any)[mainOptionKey] : ''
                 return (
                   <div className='embla__slide relative' key={index}>
                     <Image
@@ -152,11 +152,11 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
                       height={700}
                       className='w-full aspect-square object-contain'
                     />
-                    {label && (
+                    {/* {label && (
                       <div className='absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center py-2'>
                         {label}
                       </div>
-                    )}
+                    )} */}
                   </div>
                 )
               })}
