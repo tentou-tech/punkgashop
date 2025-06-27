@@ -71,12 +71,19 @@
     "checkout": "Thanh toán",
     "preOrder": "Đặt trước",
     "allCollections": "Tất cả bộ sưu tập",
-    "by": "bởi"
+    "by": "thiết kế bởi"
   },
   "product": {
     "quantity": "Số lượng",
     "addToCart": "Thêm vào giỏ",
-    "buyNow": "Mua ngay"
+    "buyNow": "Mua ngay",
+    "productDetails": "Thông tin sản phẩm",
+    "material": "Chất liệu",
+    "style": "Kiểu dáng",
+    "origin": "Xuất xứ",
+    "productDescription": "Mô tả sản phẩm",
+    "vietnam": "Việt Nam",
+    "regular": "Cơ bản"
   },
   "cart": {
     "cart": "Giỏ hàng",
@@ -104,7 +111,9 @@
     "notePlaceholder": "Ghi chú",
     "payNow": "Thanh toán ngay",
     "or": "hoặc",
-    "continueShopping": "Tiếp tục mua sắm"
+    "continueShopping": "Tiếp tục mua sắm",
+    "paymentMethod": "Phương thức thanh toán",
+    "agreeToTerms": "Tôi đã đọc và đồng ý với các điều khoản & điều kiện giao dịch chung của PunkgaShop"
   },
   "common": {
     "currency": "VNĐ"

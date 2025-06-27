@@ -10,7 +10,9 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { useForm } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
-
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import Momo from '@/assets/payment-method/momo.svg'
+import { Checkbox } from '@/components/ui/checkbox'
 interface Inputs {
   email: string
   name: string
@@ -107,12 +109,31 @@ export default function Checkout() {
             <Label htmlFor='note'>{t('note')}</Label>
             <Textarea id='note' placeholder={t('notePlaceholder')} {...register('note')} />
           </div>
-
-          <Button className='w-full justify-center !bg-gray-600 !text-white' type='submit'>
+        </div>
+        <div className='space-y-4'>
+          <div className='text-xl font-bold'>{t('paymentMethod')}</div>
+          <RadioGroup defaultValue='momo'>
+            <div className='flex items-center gap-3 border-Border-border-brand-solid border rounded p-3'>
+              <RadioGroupItem value='momo' id='momo' />
+              <div className='flex items-center gap-2'>
+                <Image src={Momo} alt='Momo' />
+                <Label htmlFor='momo'>Momo</Label>
+              </div>
+            </div>
+          </RadioGroup>
+        </div>
+        <div className='flex items-center gap-2'>
+          <Checkbox checked id='agree-tos' />
+          <Label htmlFor='agree-tos'>{t('agreeToTerms')}</Label>
+        </div>
+        <div className='space-y-3'>
+          <Button className='w-full justify-center' type='submit'>
             {t('payNow')}
           </Button>
-          <div className='text-center w-full'>{t('or')}</div>
-          <Link href='/' className='mx-auto block text-center text-brand hover:text-brand/80'>
+          <div className='text-center w-full text-xs text-Text-Default-text-tertiary'>{t('or')}</div>
+          <Link
+            href='/'
+            className='mx-auto block text-sm text-center text-Text-Brand-text-brand-primary hover:text-Text-Brand-text-brand-primary/80'>
             {t('continueShopping')}
           </Link>
         </div>
@@ -120,7 +141,7 @@ export default function Checkout() {
       <div className='space-y-4 overflow-hidden order-1 md:order-2'>
         <div className='max-h-[calc(100vh-24rem)] space-y-4 overflow-y-scroll hidden-scrollbar'>
           {checkoutItems.map((item) => (
-            <CheckoutItem key={item.internalId} item={item} />
+            <CheckoutItem key={item.internalId || item.product.id} item={item} />
           ))}
         </div>
         <div className='space-y-3 text-sm text-Text-Default-text-tertiary'>
