@@ -161,25 +161,13 @@ export default function Home() {
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveUp absolute w-full'>
                 {column1Images.map((image, index) => (
                   <div key={`col1-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image
-                      src={image}
-                      alt={t('collectionImage', { index: index + 1 })}
-                      width={2000}
-                      height={2000}
-                      className='w-full h-full object-cover'
-                    />
+                    <Image src={image} alt='' width={2000} height={2000} className='w-full h-full object-cover' />
                   </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
                 {column1Images.map((image, index) => (
                   <div key={`col1-dup-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image
-                      src={image}
-                      alt={t('collectionImage', { index: index + 1 })}
-                      width={2000}
-                      height={2000}
-                      className='w-full h-full object-cover'
-                    />
+                    <Image src={image} alt='' width={2000} height={2000} className='w-full h-full object-cover' />
                   </div>
                 ))}
               </div>
@@ -190,25 +178,13 @@ export default function Home() {
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveDown absolute w-full'>
                 {column2Images.map((image, index) => (
                   <div key={`col2-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image
-                      src={image}
-                      alt={t('collectionImage', { index: index + 1 })}
-                      width={2000}
-                      height={2000}
-                      className='w-full h-full object-cover'
-                    />
+                    <Image src={image} alt='' width={2000} height={2000} className='w-full h-full object-cover' />
                   </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
                 {column2Images.map((image, index) => (
                   <div key={`col2-dup-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image
-                      src={image}
-                      alt={t('collectionImage', { index: index + 1 })}
-                      width={2000}
-                      height={2000}
-                      className='w-full h-full object-cover'
-                    />
+                    <Image src={image} alt='' width={2000} height={2000} className='w-full h-full object-cover' />
                   </div>
                 ))}
               </div>
@@ -219,25 +195,13 @@ export default function Home() {
               <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 animate-moveUp absolute w-full'>
                 {column3Images.map((image, index) => (
                   <div key={`col3-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image
-                      src={image}
-                      alt={t('collectionImage', { index: index + 1 })}
-                      width={2000}
-                      height={2000}
-                      className='w-full h-full object-cover'
-                    />
+                    <Image src={image} alt='' width={2000} height={2000} className='w-full h-full object-cover' />
                   </div>
                 ))}
                 {/* Duplicate squares for seamless animation */}
                 {column3Images.map((image, index) => (
                   <div key={`col3-dup-${index}`} className='aspect-square w-full bg-gray-200'>
-                    <Image
-                      src={image}
-                      alt={t('collectionImage', { index: index + 1 })}
-                      width={2000}
-                      height={2000}
-                      className='w-full h-full object-cover'
-                    />
+                    <Image src={image} alt='' width={2000} height={2000} className='w-full h-full object-cover' />
                   </div>
                 ))}
               </div>

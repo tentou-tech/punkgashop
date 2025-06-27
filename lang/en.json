@@ -76,7 +76,14 @@
   "product": {
     "quantity": "Quantity",
     "addToCart": "Add to cart",
-    "buyNow": "Buy now"
+    "buyNow": "Buy now",
+    "productDetails": "Product Details",
+    "material": "Material",
+    "style": "Style",
+    "origin": "Origin",
+    "productDescription": "Product Description",
+    "vietnam": "Vietnam",
+    "regular": "Regular"
   },
   "cart": {
     "cart": "Cart",
@@ -104,7 +111,9 @@
     "notePlaceholder": "Note",
     "payNow": "Pay now",
     "or": "or",
-    "continueShopping": "Continue shopping"
+    "continueShopping": "Continue shopping",
+    "paymentMethod": "Payment method",
+    "agreeToTerms": "I have read and agree to the general terms and conditions of PunkgaShop"
   },
   "common": {
     "currency": "VNĐ"

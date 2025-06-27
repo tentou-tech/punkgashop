@@ -251,11 +251,10 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
               </button>
             </div>
           </div>
-          <div
-            className='text-sm text-Text-Default-text-secondary'
-            dangerouslySetInnerHTML={{ __html: data.description }}></div>
           <div className='grid grid-cols-2 gap-4'>
-            <Button onClick={() => addItem(data, quantity, selectedOption)}>{t('addToCart')}</Button>
+            <Button variant='outline' onClick={() => addItem(data, quantity, selectedOption)}>
+              {t('addToCart')}
+            </Button>
             <Button
               onClick={() => {
                 setCheckoutItems([{ product: data, quantity, option: selectedOption }])
@@ -263,6 +262,29 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
               }}>
               {t('buyNow')}
             </Button>
+          </div>
+          <div className='space-y-2.5'>
+            <div className='text-base font-semibold '>{t('productDetails')}</div>
+            <div className='flex flex-col justify-start items-start'>
+              <div className='py-2 grid grid-cols-[220px_1fr] gap-4'>
+                <div className='text-[#d9d9de] text-sm '>{t('material')}</div>
+                <div className='text-[#d9d9de] text-sm '>100% Cotton</div>
+              </div>
+              <div className='py-2 grid grid-cols-[220px_1fr] gap-4'>
+                <div className='text-[#d9d9de] text-sm '>{t('style')}</div>
+                <div className='text-[#d9d9de] text-sm '>{t('regular')}</div>
+              </div>
+              <div className='py-2 grid grid-cols-[220px_1fr] gap-4'>
+                <div className='text-[#d9d9de] text-sm '>{t('origin')}</div>
+                <div className='text-[#d9d9de] text-sm '>{t('vietnam')}</div>
+              </div>
+            </div>
+          </div>
+          <div className='space-y-2.5'>
+            <div className='text-white text-base font-semibold '>{t('productDescription')}</div>
+            <div
+              className='text-sm text-Text-Default-text-secondary'
+              dangerouslySetInnerHTML={{ __html: data.description }}></div>
           </div>
         </div>
       </div>
