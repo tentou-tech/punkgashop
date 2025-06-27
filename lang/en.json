@@ -3,33 +3,47 @@
     "login": "Login"
   },
   "shippingPolicy": {
-    "title": "Shipping & Return Policy",
-    "deliveryTitle": "Delivery Time:",
-    "deliveryContent": "Depending on location and our delivery partners at the time of order processing.",
-    "feeTitle": "Fee:",
-    "feeContent": "Based on region and weight.",
-    "returnTitle": "Return & Refund Policy",
-    "eligibleTitle": "A. Eligible Return/Exchange Cases:",
-    "defectiveProduct": "Defective product or damage during shipping",
-    "wrongItem": "Wrong item, size, or color delivered",
-    "conditionsTitle": "B. Conditions:",
-    "unusedProduct": "Product must be unused and have original tags intact",
-    "unboxingVideo": "Unboxing video may be required for verification",
-    "processTitle": "C. Process:",
-    "contactUs": "Contact PunkgaShop via email or hotline",
-    "returnItem": "Return the item as instructed",
-    "inspection": "We will inspect and process within 3–5 business days",
-    "refundTitle": "D. Refund:",
-    "fullRefund": "100% refund if no replacement is available",
-    "refundMethod": "Refunds are processed via bank transfer",
-    "processingTime": "Processing time: 3–7 business days."
+    "title": "Shipping, Delivery, and Inspection Policy",
+    "scopeTitle": "Scope of Application",
+    "scopeContent": "Applicable to all provinces nationwide.",
+    "deliveryTimeTitle": "Delivery Time",
+    "deliveryTimeDetails": [
+      "Orders will be shipped within 24 hours or as per contract progress.",
+      "For distant provinces, delivery may take 7–15 days, depending on product status and weather.",
+      "Delivery time is calculated from the order confirmation to receipt of goods.",
+      "If delivery is delayed beyond 10 days, customers may cancel at no cost."
+    ],
+    "deliveryMethodTitle": "Delivery Method",
+    "deliveryMethodDetails": [
+      "Distant customers: Delivery services.",
+      "Inner-city/suburban customers: Delivery services."
+    ],
+    "logisticsTitle": "Responsibilities of Logistics Providers",
+    "logisticsDetails": [
+      "Logistics partners must provide necessary documents during delivery.",
+      "punkgashop.vn will supply all relevant documents to logistics services and recipients.",
+      "All orders are pre-packed and sealed by punkgashop.vn.",
+      "Delivery is under \"sealed package\" condition, with a delivery note that includes recipient details.",
+      "Carriers must provide invoices to authorities upon request.",
+      "All packages are labeled with recipient name, phone, and address.",
+      "A valid sales invoice may be included in the parcel (if any); e-invoices will be emailed after customer confirmation.",
+      "Sales invoices support complaint handling, market value assessment, and legal circulation verification."
+    ],
+    "inspectionTitle": "Product Inspection Policy",
+    "inspectionDetails": [
+      "Customers may request to inspect the product before accepting delivery.",
+      "If incorrect items are delivered, customers can return the order without payment.",
+      "If prepaid and the order is incorrect, customers can request a refund or a correct replacement.",
+      "Contact support@punkga.me or +84 961 292 594 for refund or exchange requests."
+    ]
   },
   "footer": {
     "privacy": "Privacy",
     "termOfService": "Term of service",
     "privacyPolicy": "Privacy policy",
     "paymentPolicy": "Payment policy",
-    "shippingPolicy": "Shipping & Return Policy",
+    "shippingPolicy": "Shipping Policy",
+    "returnPolicy": "Return Policy",
     "allRightsReserved": "All rights reserved",
     "companyName": "THIEN DANG SERVICE TRADE AND TECHNOLOGY JOINT STOCK COMPANY",
     "phoneNumber": "+84 961 292 594",
@@ -51,17 +65,81 @@
     "ownership": "All content and images belong to PunkgaShop",
     "disputes": "Disputes will be handled in accordance with Vietnamese law"
   },
+  "returnPolicy": {
+    "title": "Return and Exchange Policy",
+    "scopeTitle": "Application Scope",
+    "scopeContent": "Products damaged due to shipping or manufacturing defects can be exchanged within 12 hours.",
+    "conditionsTitle": "Return Conditions",
+    "conditionsDetails": [
+      "Return requests must be made within 7 days.",
+      "Products must retain original packaging and labels.",
+      "Each product can be exchanged once.",
+      "No exchange for products outside the return window or without defects."
+    ],
+    "beforeDeliveryTitle": "Before delivery",
+    "beforeDeliveryContent": "Contact the sales agent to switch items.",
+    "afterDeliveryTitle": "After delivery",
+    "defectiveTitle": "For defective products",
+    "defectiveDetails": [
+      "You may request a replacement at no cost if due to supplier fault.",
+      "If customer-caused defects: No responsibility on the supplier.",
+      "Exchange requests will incur shipping and price difference fees (if any), subject to mutual agreement."
+    ],
+    "nonDefectiveTitle": "For non-defective items",
+    "nonDefectiveContent": "If customers change their mind, they must meet the following:",
+    "nonDefectiveDetails": [
+      "Products must be sealed and packaged.",
+      "Product must not be a custom or special-order item.",
+      "All related costs (e.g., shipping) will be borne by the customer."
+    ],
+    "contactTitle": "For further details or assistance",
+    "hotline": "Hotline: +84 961 292 594",
+    "feedback": "We welcome feedback and suggestions."
+  },
+
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "intro": "PunkgaShop is committed to protecting customers' personal data in compliance with Vietnamese law.",
-    "purpose": "1. Purpose: Order processing, delivery, customer support, promotions (with consent).",
-    "dataCollected": "2. Data Collected: Full name, phone number, email, shipping address.",
-    "usageScope": "3. Usage Scope: Internal use or with shipping partners only.",
-    "retentionPeriod": "4. Retention Period: Until deletion request or 12 months of inactivity.",
-    "security": "5. Security: No third-party sharing unless required by law.",
-    "contact": "6. Contact:",
-    "email": "Email: support@punkga.me,",
-    "hotline": "Hotline: +84 961 292 594."
+    "intro": "PunkgaShop is committed to protecting your personal information in accordance with the law.",
+    "purpose": "1. Purpose of Collecting Personal Information",
+    "purposeDetails": [
+      "We collect customer information for the following purposes:",
+      "To support customers: purchasing, payment, and delivery.",
+      "To provide product information, services, and support upon customer request.",
+      "To send notifications about our latest programs and products.",
+      "To resolve issues that arise during the purchasing process."
+    ],
+    "dataCollected": "2. Scope of Information Collection",
+    "dataCollectedDetails": "We collect customer personal information when placing orders on the website, including: Full name; Email address; Phone number; Address.",
+    "retentionPeriod": "3. Duration of Information Storage",
+    "retentionPeriodDetails": "Customer personal data will be stored until the customer requests deletion or deletes it themselves by logging in. In all other cases, personal information will be securely stored on the server of punkgashop.vn.",
+    "usageScope": "4. Parties or Organizations with Access to Information",
+    "usageScopeDetails": [
+      "Shipping providers: Will receive name, address, and phone number for delivery purposes.",
+      "Company staff: Assigned departments will use the information to support customers during product use.",
+      "Partner programs, joint operations, outsourcing services: These may access information for the purposes stated in Section 1, with personal data privacy requirements applied.",
+      "Legal obligations: We may disclose personal data when required by law and reasonably necessary to comply with legal processes.",
+      "Business transfers: In case of merger or acquisition, the buyer will have the right to access and maintain stored personal information."
+    ],
+    "security": "5. Information Collecting and Managing Entity Address",
+    "securityDetails": [
+      "Company name: CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ THƯƠNG MẠI DỊCH VỤ THIÊN ĐĂNG",
+      "Business registration number: 0110916606 issued by Hanoi Department of Planning and Investment on 17/12/2024",
+      "Address: No. 24, Alley 62 Nguyen Viet Xuan, Khuong Mai Ward, Thanh Xuan District, Hanoi, Vietnam"
+    ],
+    "contact": "6. Methods and Tools for Users to Access and Modify Data",
+    "contactDetails": [
+      "If you wish to access or edit the personal information you provided, please:",
+      "Call: +84 961 292 594",
+      "Email: support@punkga.me"
+    ],
+    "complaint": "Complaint Mechanism Regarding Misuse of Personal Information:",
+    "complaintDetails": [
+      "At punkgashop.vn, protecting your personal information is a top priority. We guarantee that your information will be kept confidential. We commit not to share, sell, or rent your personal data to any third party, and only use it in the following cases:",
+      "To improve customer service quality.",
+      "To resolve complaints within 3 days of receipt.",
+      "When required by law enforcement.",
+      "If you have any questions or feedback regarding this policy or believe your data has been misused, please contact us at +84 961 292 594 or support@punkga.me."
+    ]
   },
   "collection": {
     "followUs": "FOLLOW US",

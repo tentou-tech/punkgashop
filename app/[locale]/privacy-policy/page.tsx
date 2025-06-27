@@ -14,29 +14,58 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <p className='mb-4'>{t('purpose')}</p>
+          <h2 className='text-xl font-semibold mb-4'>{t('purpose')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('purposeDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
         </section>
 
         <section>
-          <p className='mb-4'>{t('dataCollected')}</p>
+          <h2 className='text-xl font-semibold mb-4'>{t('dataCollected')}</h2>
+          <p className='mb-4'>{t('dataCollectedDetails')}</p>
         </section>
 
         <section>
-          <p className='mb-4'>{t('usageScope')}</p>
+          <h2 className='text-xl font-semibold mb-4'>{t('retentionPeriod')}</h2>
+          <p className='mb-4'>{t('retentionPeriodDetails')}</p>
         </section>
 
         <section>
-          <p className='mb-4'>{t('retentionPeriod')}</p>
+          <h2 className='text-xl font-semibold mb-4'>{t('usageScope')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('usageScopeDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
         </section>
 
         <section>
-          <p className='mb-4'>{t('security')}</p>
+          <h2 className='text-xl font-semibold mb-4'>{t('security')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('securityDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
         </section>
 
         <section>
-          <p className='mb-4'>{t('contact')}</p>
-          <p className='mb-2'>{t('email')}</p>
-          <p>{t('hotline')}</p>
+          <h2 className='text-xl font-semibold mb-4'>{t('contact')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('contactDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2 className='text-xl font-semibold mb-4'>{t('complaint')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('complaintDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
         </section>
       </div>
     </main>

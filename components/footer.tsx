@@ -80,6 +80,9 @@ export default function Footer() {
             <Link href='/shipping-policy' className='self-stretch justify-center text-[#9091a0] text-sm font-normal '>
               {t('shippingPolicy')}
             </Link>
+            <Link href='/return-policy' className='self-stretch justify-center text-[#9091a0] text-sm font-normal '>
+              {t('returnPolicy')}
+            </Link>
           </div>
           <div>{/* <Image src={BadgeBCT} alt='badge bct' className='w-[150px] h-auto' /> */}</div>
         </div>

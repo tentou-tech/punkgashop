@@ -10,46 +10,44 @@ export default function ShippingPolicyPage() {
 
       <div className='space-y-8 text-Text-Default-text-secondary'>
         <section>
-          <p className='mb-2'><span className='font-semibold'>{t('deliveryTitle')}</span> {t('deliveryContent')}</p>
-          <p className='mb-4'><span className='font-semibold'>{t('feeTitle')}</span> {t('feeContent')}</p>
+          <h2 className='text-xl font-semibold mb-4'>{t('scopeTitle')}</h2>
+          <p className='mb-4'>{t('scopeContent')}</p>
         </section>
 
         <section>
-          <h2 className='text-xl md:text-2xl font-bold mb-4 text-Text-Default-text-primary'>{t('returnTitle')}</h2>
-          
-          <div className='mb-6'>
-            <h3 className='font-semibold mb-2'>{t('eligibleTitle')}</h3>
-            <ul className='list-disc pl-6 mb-4 space-y-2'>
-              <li>{t('defectiveProduct')}</li>
-              <li>{t('wrongItem')}</li>
-            </ul>
-          </div>
-          
-          <div className='mb-6'>
-            <h3 className='font-semibold mb-2'>{t('conditionsTitle')}</h3>
-            <ul className='list-disc pl-6 mb-4 space-y-2'>
-              <li>{t('unusedProduct')}</li>
-              <li>{t('unboxingVideo')}</li>
-            </ul>
-          </div>
-          
-          <div className='mb-6'>
-            <h3 className='font-semibold mb-2'>{t('processTitle')}</h3>
-            <ul className='list-disc pl-6 mb-4 space-y-2'>
-              <li>{t('contactUs')}</li>
-              <li>{t('returnItem')}</li>
-              <li>{t('inspection')}</li>
-            </ul>
-          </div>
-          
-          <div className='mb-6'>
-            <h3 className='font-semibold mb-2'>{t('refundTitle')}</h3>
-            <ul className='list-disc pl-6 mb-4 space-y-2'>
-              <li>{t('fullRefund')}</li>
-              <li>{t('refundMethod')}</li>
-              <li>{t('processingTime')}</li>
-            </ul>
-          </div>
+          <h2 className='text-xl font-semibold mb-4'>{t('deliveryTimeTitle')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('deliveryTimeDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2 className='text-xl font-semibold mb-4'>{t('deliveryMethodTitle')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('deliveryMethodDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2 className='text-xl font-semibold mb-4'>{t('logisticsTitle')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('logisticsDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2 className='text-xl font-semibold mb-4'>{t('inspectionTitle')}</h2>
+          <ul className='list-disc pl-6 space-y-2'>
+            {t.raw('inspectionDetails').map((detail: string, index: number) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
         </section>
       </div>
     </main>
