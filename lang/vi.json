@@ -54,6 +54,7 @@
     "title": "Chính sách thanh toán",
     "supportedMethods": "Hình thức thanh toán hỗ trợ:",
     "bankTransfer": "Chuyển khoản ngân hàng",
+    "cashOnDelivery": "Thanh toán khi nhận hàng",
     "eWallets": "Ví điện tử Momo",
     "displayInfo": "Thông tin thanh toán được hiển thị rõ ràng trước khi xác nhận đơn hàng."
   },
@@ -191,7 +192,8 @@
     "or": "hoặc",
     "continueShopping": "Tiếp tục mua sắm",
     "paymentMethod": "Phương thức thanh toán",
-    "agreeToTerms": "Tôi đã đọc và đồng ý với các điều khoản & điều kiện giao dịch chung của PunkgaShop"
+    "agreeToTerms": "Tôi đã đọc và đồng ý với các điều khoản & điều kiện giao dịch chung của PunkgaShop",
+    "checkoutSuccessfully": "Thanh toán thành công! Cảm ơn bạn đã đặt hàng."
   },
   "common": {
     "currency": "VNĐ"
