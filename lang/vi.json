@@ -51,12 +51,22 @@
     "address": "24/62 Nguyễn Viết Xuân, Khương Mai, Thanh Xuân, Hà Nội, Việt Nam"
   },
   "paymentPolicy": {
-    "title": "Chính sách thanh toán",
-    "supportedMethods": "Hình thức thanh toán hỗ trợ:",
-    "bankTransfer": "Chuyển khoản ngân hàng",
-    "cashOnDelivery": "Thanh toán khi nhận hàng",
-    "eWallets": "Ví điện tử Momo",
-    "displayInfo": "Thông tin thanh toán được hiển thị rõ ràng trước khi xác nhận đơn hàng."
+    "title": "PHƯƠNG THỨC THANH TOÁN",
+    "availableOptions": "Các hình thức thanh toán hiện có:",
+    "cashOnDelivery": "Thanh toán khi nhận hàng (COD)",
+    "eWallets": "Thanh toán qua ví điện tử: Momo",
+    "conditionsTitle": "Điều kiện áp dụng:",
+    "conditionsContent1": "Chính sách thanh toán áp dụng cho tất cả các sản phẩm có trên website.",
+    "conditionsContent2": "Áp dụng cho khách hàng trong phạm vi giao hàng của chúng tôi.",
+    "processTitle": "Quy trình đặt hàng và thanh toán:",
+    "step1": "Bước 1: Khách hàng truy cập vào website, chọn sản phẩm cần mua và tiến hành đặt hàng.",
+    "step2": "Bước 2: Chọn phương thức thanh toán mong muốn.",
+    "step3": "Bước 3: Xác nhận đơn hàng",
+    "step3Content1": "Sau khi đặt hàng thành công, hệ thống sẽ gửi email hoặc tin nhắn xác nhận đơn hàng tới khách hàng.",
+    "step3Content2": "Nhân viên chăm sóc khách hàng sẽ liên hệ để xác nhận lại thông tin đơn hàng.",
+    "step4": "Bước 4: Giao hàng và thanh toán",
+    "step4Content1": "Nhân viên giao hàng sẽ liên hệ với khách hàng trước khi giao hàng.",
+    "step4Content2": "Khách hàng kiểm tra sản phẩm và xác nhận nhận hàng."
   },
   "termOfService": {
     "title": "Điều khoản sử dụng",

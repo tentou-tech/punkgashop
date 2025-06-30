@@ -51,12 +51,22 @@
     "address": "24/62 Nguyen Viet Xuan, Khuong Mai, Thanh Xuan, Hanoi, Vietnam"
   },
   "paymentPolicy": {
-    "title": "Payment Policy",
-    "supportedMethods": "Supported payment methods:",
-    "bankTransfer": "Bank Transfer",
-    "cashOnDelivery": "Cash on Delivery",
-    "eWallets": "E-wallets: Momo",
-    "displayInfo": "All payment details will be clearly displayed before you confirm your order."
+    "title": "PAYMENT METHODS",
+    "availableOptions": "Available Payment Options:",
+    "cashOnDelivery": "Cash on Delivery (COD)",
+    "eWallets": "E-Wallet Payment: Momo",
+    "conditionsTitle": "Conditions of Application:",
+    "conditionsContent1": "This payment policy applies to all products available on the website.",
+    "conditionsContent2": "Applicable to customers within our delivery coverage area.",
+    "processTitle": "Order and Payment Process:",
+    "step1": "Step 1: Customers visit the website, select the desired products, and place an order.",
+    "step2": "Step 2: Choose the preferred payment method.",
+    "step3": "Step 3: Order Confirmation",
+    "step3Content1": "After a successful order, the system will send a confirmation email or message to the customer.",
+    "step3Content2": "A customer service representative will contact the customer to reconfirm the order details.",
+    "step4": "Step 4: Delivery and Payment",
+    "step4Content1": "The delivery staff will contact the customer before delivering the order.",
+    "step4Content2": "The customer checks the product and confirms the receipt."
   },
   "termOfService": {
     "title": "Terms of Use",
