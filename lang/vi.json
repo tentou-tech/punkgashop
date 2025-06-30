@@ -42,7 +42,7 @@
     "termOfService": "Điều khoản dịch vụ",
     "privacyPolicy": "Chính sách bảo mật",
     "paymentPolicy": "Chính sách thanh toán",
-    "shippingPolicy": "Chính sách giao hàng",
+    "shippingPolicy": "Chính sách vận chuyển và kiểm tra hàng",
     "returnPolicy": "Chính sách đổi trả",
     "allRightsReserved": "Tất cả các quyền được bảo lưu",
     "companyName": "CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ THƯƠNG MẠI DỊCH VỤ THIÊN ĐĂNG",
@@ -54,7 +54,7 @@
     "title": "Chính sách thanh toán",
     "supportedMethods": "Hình thức thanh toán hỗ trợ:",
     "bankTransfer": "Chuyển khoản ngân hàng",
-    "eWallets": "Ví điện tử (nếu có)",
+    "eWallets": "Ví điện tử Momo",
     "displayInfo": "Thông tin thanh toán được hiển thị rõ ràng trước khi xác nhận đơn hàng."
   },
   "termOfService": {
