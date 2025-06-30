@@ -54,7 +54,8 @@
     "title": "Payment Policy",
     "supportedMethods": "Supported payment methods:",
     "bankTransfer": "Bank Transfer",
-    "eWallets": "E-wallets (if applicable)",
+    "cashOnDelivery": "Cash on Delivery",
+    "eWallets": "E-wallets: Momo",
     "displayInfo": "All payment details will be clearly displayed before you confirm your order."
   },
   "termOfService": {
@@ -191,7 +192,8 @@
     "or": "or",
     "continueShopping": "Continue shopping",
     "paymentMethod": "Payment method",
-    "agreeToTerms": "I have read and agree to the general terms and conditions of PunkgaShop"
+    "agreeToTerms": "I have read and agree to the general terms and conditions of PunkgaShop",
+    "checkoutSuccessfully": "Checkout successful! Thank you for your order."
   },
   "common": {
     "currency": "VNĐ"

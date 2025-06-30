@@ -12,7 +12,7 @@ export default function PaymentPolicyPage() {
         <section>
           <p className='mb-4 font-semibold'>{t('supportedMethods')}</p>
           <ul className='list-disc pl-6 mb-4 space-y-2'>
-            <li>{t('bankTransfer')}</li>
+            <li>{t('cashOnDelivery')}</li>
             <li>{t('eWallets')}</li>
           </ul>
         </section>
