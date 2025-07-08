@@ -7,6 +7,7 @@ import { ChevronLeft, Minus, Plus, Trash } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
+import { getSrcImage } from '@/utils/image'
 export default function Checkout() {
   const t = useTranslations('cart')
   const commonT = useTranslations('common')
@@ -29,7 +30,12 @@ export default function Checkout() {
       <div className='p-6 bg-[#121212] h-fit space-y-3 text-[#9091A0] border text-sm'>
         <div className='flex items-center justify-between text-xs md:text-sm'>
           <span>{t('subtotal')}</span>
-          <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}</span>
+          <span>
+            {formatCurrency(
+              items.reduce((total, item) => total + item.option.price * item.quantity, 0),
+              commonT('currency')
+            )}
+          </span>
         </div>
         <div className='flex items-center justify-between text-xs md:text-sm'>
           <span>{t('shippingFee')}</span>
@@ -42,7 +48,12 @@ export default function Checkout() {
         <div className='h-px w-full bg-Border-border-primary'></div>
         <div className='flex items-center justify-between text-white text-base ms:text-lg font-bold '>
           <span>{t('total')}</span>
-          <span>{formatCurrency(items.reduce((total, item) => total + item.option.price * item.quantity, 0), commonT('currency'))}</span>
+          <span>
+            {formatCurrency(
+              items.reduce((total, item) => total + item.option.price * item.quantity, 0),
+              commonT('currency')
+            )}
+          </span>
         </div>
         <Button
           className='w-full justify-center'
@@ -64,7 +75,7 @@ const CheckoutItem = ({ item }: { item: CartItem }) => {
     <div className='grid grid-cols-[5fr_1fr] md:grid-cols-[5fr_1fr_1fr] items-center md:gap-6'>
       <div className='flex items-center gap-6'>
         <Image
-          src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${item.product.thumbnail}`}
+          src={getSrcImage(item.product.thumbnail)}
           alt={item.product.name}
           width={100}
           height={100}

@@ -33,6 +33,12 @@ export type ProductCollectionDetail = {
     }
   }
   products: ProductDetail[]
+  paragraphs: {
+    image: string
+    sort: number
+    text: string
+    title: string
+  }[]
 }
 
 export type ProductDetail = {
