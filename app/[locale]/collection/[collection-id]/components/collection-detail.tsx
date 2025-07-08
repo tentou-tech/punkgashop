@@ -62,12 +62,36 @@ export default function CollectionDetail() {
           </Link>
         </div>
         <div className='flex gap-4 md:gap-8 items-center justify-center'>
-          <Discord className='w-5 h-5 md:w-6 md:h-6' />
-          <Facebook className='w-5 h-5 md:w-6 md:h-6' />
-          <Instagram className='w-5 h-5 md:w-6 md:h-6' />
-          <Tiktok className='w-5 h-5 md:w-6 md:h-6' />
-          <X className='w-5 h-5 md:w-6 md:h-6' />
-          <Youtube className='w-5 h-5 md:w-6 md:h-6' />
+          {data?.creator.socials.discord && (
+            <Link href={data?.creator.socials.discord} target='_blank'>
+              <Discord className='w-5 h-5 md:w-6 md:h-6' />
+            </Link>
+          )}
+          {data?.creator.socials.facebook && (
+            <Link href={data?.creator.socials.facebook} target='_blank'>
+              <Facebook className='w-5 h-5 md:w-6 md:h-6' />
+            </Link>
+          )}
+          {data?.creator.socials.instagram && (
+            <Link href={data?.creator.socials.instagram} target='_blank'>
+              <Instagram className='w-5 h-5 md:w-6 md:h-6' />
+            </Link>
+          )}
+          {data?.creator.socials.tiktok && (
+            <Link href={data?.creator.socials.tiktok} target='_blank'>
+              <Tiktok className='w-5 h-5 md:w-6 md:h-6' />
+            </Link>
+          )}
+          {data?.creator.socials.twitter && (
+            <Link href={data?.creator.socials.twitter} target='_blank'>
+              <X className='w-5 h-5 md:w-6 md:h-6' />
+            </Link>
+          )}
+          {data?.creator.socials.youtube && (
+            <Link href={data?.creator.socials.youtube} target='_blank'>
+              <Youtube className='w-5 h-5 md:w-6 md:h-6' />
+            </Link>
+          )}
         </div>
       </div>
       {!!data?.paragraphs?.length && (

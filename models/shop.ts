@@ -28,8 +28,14 @@ export type ProductCollectionDetail = {
     avatar_url: string
     slug: string
     socials: {
-      web: string
-      behance: string
+      web?: string
+      tiktok?: string
+      behance?: string
+      discord?: string
+      twitter?: string
+      youtube?: string
+      facebook?: string
+      instagram?: string
     }
   }
   products: ProductDetail[]
