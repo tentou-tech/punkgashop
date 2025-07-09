@@ -1,4 +1,5 @@
-import HeroBanner from '@/assets/hero-banner.png'
+import HeroBanner from '@/assets/hero-banner.jpg'
+import HeroBannerMobile from '@/assets/hero-banner-mobile.jpg'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import AllCollection from './components/all-collection'
@@ -74,7 +75,14 @@ export default function Home() {
 
   return (
     <main>
-      <Image src={HeroBanner} alt='Hero Banner' width={2000} height={1000} className='w-full h-auto' />
+      <Image src={HeroBanner} alt='Hero Banner' width={2000} height={1000} className='w-full h-auto hidden lg:block' />
+      <Image
+        src={HeroBannerMobile}
+        alt='Hero Banner'
+        width={2000}
+        height={1000}
+        className='w-full h-auto block lg:hidden'
+      />
       <div className='grid grid-cols-1 md:grid-cols-2 bg-black'>
         <div className='flex justify-center flex-col gap-2 px-6 py-8 md:py-0 md:pl-[10%] lg:pl-[20%]'>
           <svg
