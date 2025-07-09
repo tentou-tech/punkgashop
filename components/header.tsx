@@ -1,15 +1,14 @@
 'use client'
 import Logo from '@/assets/Logo.svg'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useCart } from '@/provider/cart'
 import { Check, ChevronDown, Globe, Menu, Search, ShoppingBag, X } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { Link } from '@/i18n/navigation'
 import { useState } from 'react'
 import { Button } from './ui/button'
-import { useTranslations } from 'next-intl'
-import { usePathname, useRouter } from '@/i18n/navigation'
-import { useLocale } from 'next-intl'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from './ui/navigation-menu'
 
 function LanguageSwitcher({ currentLocale, pathname }: { currentLocale: string; pathname: string }) {
   const router = useRouter()
@@ -51,6 +50,17 @@ export default function Header() {
         <Link href='/'>
           <Image src={Logo} alt='Logo' width={100} height={100} className='h-9 w-auto' />
         </Link>
+        <NavigationMenu viewport={false}>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link href='https://app.punkga.me/' target='_blank'>
+                  Manga
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
       <div className='flex gap-6 items-center'>
         <Link href='/cart' className='relative'>

@@ -16,6 +16,7 @@ import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
+import { getSrcImage } from '@/utils/image'
 interface Inputs {
   email: string
   name: string
@@ -213,7 +214,7 @@ const CheckoutItem = ({ item }: { item: CartItem }) => {
   return (
     <div className='flex gap-4 items-center overflow-hidden'>
       <Image
-        src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${item.product.thumbnail}`}
+        src={getSrcImage(item.product.thumbnail)}
         alt='Product'
         width={100}
         height={100}

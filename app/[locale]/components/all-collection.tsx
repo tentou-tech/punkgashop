@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import useSWR from 'swr'
 import { useTranslations } from 'next-intl'
+import { getSrcImage } from '@/utils/image'
 export default function AllCollection() {
   const { data } = useSWR('/collections', getCollections)
   const t = useTranslations('collection')
@@ -18,7 +19,7 @@ export default function AllCollection() {
           <Link key={index} href={`/collection/${collection.id}`} className='relative'>
             <div className='w-full aspect-square '>
               <Image
-                src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${collection.thumbnail}`}
+                src={getSrcImage(collection.thumbnail)}
                 alt={collection.name}
                 width={500}
                 height={500}
