@@ -27,7 +27,7 @@ export type ProductCollectionDetail = {
     bio: string
     avatar_url: string
     slug: string
-    socials: {
+    socials?: {
       web?: string
       tiktok?: string
       behance?: string
