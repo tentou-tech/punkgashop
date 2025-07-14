@@ -66,7 +66,7 @@ export default function Footer() {
         <div className='flex gap-20 items-start'>
           <div className='inline-flex flex-col justify-center items-start gap-2'>
             <div className='self-stretch pb-4 inline-flex justify-start items-start'>
-              <div className='justify-center text-white text-base font-semibold '>{t('privacy')}</div>
+              <h4 className='justify-center text-white text-base font-semibold '>{t('privacy')}</h4>
             </div>
             <Link href='/term-of-service' className='self-stretch justify-center text-[#9091a0] text-sm font-normal '>
               {t('termOfService')}

@@ -131,6 +131,7 @@ export default function Home() {
               fill='white'
             />
           </svg>
+          <h1 className='hidden'>Punkga Shop</h1>
           <div className='flex flex-wrap items-center gap-2 uppercase font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl'>
             <span className='text-Text-Brand-text-brand-primary'>{t('artist')}</span>
             <svg
@@ -152,14 +153,14 @@ export default function Home() {
             </svg>
             <span>{t('community')}</span>
           </div>
-          <div className='text-Text-Default-text-secondary text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
+          <h2 className='text-Text-Default-text-secondary text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
             {t('supportArtist')}
             <span className='hidden sm:inline'>
               <br />
             </span>{' '}
             <span className='inline sm:hidden'> </span>
             <span className='text-Text-Brand-text-brand-primary'> & </span> {t('getCoolOutfits')}
-          </div>
+          </h2>
           <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base'>{t('exploreCollection')}</Button>
         </div>
         <div className='w-full aspect-square sm:h-[400px] md:h-[500px] lg:h-[632px] pr-0 md:pr-5 overflow-hidden'>
