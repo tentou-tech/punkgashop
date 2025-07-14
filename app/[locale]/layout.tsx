@@ -8,6 +8,7 @@ import { Toaster } from 'sonner'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
+import { GoogleTagManager } from '@next/third-parties/google'
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${inter.variable} antialiased`}>
+        <GoogleTagManager gtmId='GTM-N5SFHS62' />
         <NextIntlClientProvider>
           <ContextProvider>
             <Header />
