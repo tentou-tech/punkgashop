@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       openGraph: {
         locale: 'en_US',
         title: 'Punkga Shop | Original Outfits by Vietnamese Artists',
-        images: ['/thumb/en.png'],
+        images: ['https://punkgashop.vn/thumb/en.png'],
         description:
           'Explore one-of-a-kind outfits by Vietnamese artists at Punkga Shop. Great quality, unique style, shipped anywhere in Vietnam.',
       },
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       openGraph: {
         locale: 'vi_VN',
         title: 'Punkga Shop | Outfit nghệ sĩ Việt, phong cách độc đáo',
-        images: ['/thumb/vi.png'],
+        images: ['https://punkgashop.vn/thumb/vi.png'],
         description:
           'Khám phá outfit độc lạ từ nghệ sĩ Việt tại Punkga Shop. Chất lượng cao, phong cách riêng, giao hàng toàn quốc.',
       },
