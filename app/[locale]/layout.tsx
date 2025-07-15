@@ -34,29 +34,29 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   // Set locale-specific metadata with proper typing
   const localeMap: Record<string, LocaleMetadata> = {
     en: {
-      title: 'Punkga Shop | Artist-Designed Apparel',
+      title: 'Punkga Shop | Original Outfits by Vietnamese Artists',
       description:
-        'Punkga Shop - Support your favorite artists and get cool outfits. Discover unique artist-designed clothing collections from Vietnamese creators. High-quality apparel with nationwide shipping.',
+        'Explore one-of-a-kind outfits by Vietnamese artists at Punkga Shop. Great quality, unique style, shipped anywhere in Vietnam.',
       keywords: 'Punkga Shop, artist clothing, Vietnamese designers, apparel, fashion, artist collaboration',
       openGraph: {
         locale: 'en_US',
-        title: 'Punkga Shop | Artist-Designed Apparel',
+        title: 'Punkga Shop | Original Outfits by Vietnamese Artists',
         images: ['/thumb/en.png'],
         description:
-          'Discover unique artist-designed clothing collections. Support your favorite artists and get cool outfits.',
+          'Explore one-of-a-kind outfits by Vietnamese artists at Punkga Shop. Great quality, unique style, shipped anywhere in Vietnam.',
       },
     },
     vi: {
-      title: 'Punkga Shop | Thời Trang Thiết Kế Bởi Nghệ Sĩ',
+      title: 'Punkga Shop | Outfit nghệ sĩ Việt, phong cách độc đáo',
       description:
-        'Punkga Shop - Ủng hộ nghệ sĩ yêu thích và sở hữu trang phục độc đáo. Khám phá bộ sưu tập quần áo được thiết kế bởi các nghệ sĩ Việt Nam. Sản phẩm chất lượng cao với giao hàng toàn quốc.',
+        'Khám phá outfit độc lạ từ nghệ sĩ Việt tại Punkga Shop. Chất lượng cao, phong cách riêng, giao hàng toàn quốc.',
       keywords: 'Punkga Shop, thời trang nghệ sĩ, nhà thiết kế Việt Nam, quần áo, thời trang, hợp tác nghệ sĩ',
       openGraph: {
         locale: 'vi_VN',
-        title: 'Punkga Shop | Thời Trang Thiết Kế Bởi Nghệ Sĩ',
+        title: 'Punkga Shop | Outfit nghệ sĩ Việt, phong cách độc đáo',
         images: ['/thumb/vi.png'],
         description:
-          'Khám phá bộ sưu tập quần áo độc đáo được thiết kế bởi nghệ sĩ. Ủng hộ nghệ sĩ yêu thích và sở hữu trang phục độc đáo.',
+          'Khám phá outfit độc lạ từ nghệ sĩ Việt tại Punkga Shop. Chất lượng cao, phong cách riêng, giao hàng toàn quốc.',
       },
     },
   }
