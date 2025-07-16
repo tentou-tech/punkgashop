@@ -1,14 +1,14 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import '../globals.css'
-import Header from '@/components/header'
 import Footer from '@/components/footer'
-import ContextProvider from '@/provider'
-import { Toaster } from 'sonner'
-import { NextIntlClientProvider, hasLocale } from 'next-intl'
-import { notFound } from 'next/navigation'
+import Header from '@/components/header'
 import { routing } from '@/i18n/routing'
-import { GoogleTagManager } from '@next/third-parties/google'
+import ContextProvider from '@/provider'
+import type { Metadata } from 'next'
+import { NextIntlClientProvider, hasLocale } from 'next-intl'
+import { Inter } from 'next/font/google'
+import { notFound } from 'next/navigation'
+import Script from 'next/script'
+import { Toaster } from 'sonner'
+import '../globals.css'
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -90,8 +90,16 @@ export default async function RootLayout({
   }
   return (
     <html lang={locale}>
+      <Script id='gtm-script' strategy='afterInteractive'>
+        {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-N5SFHS62');
+          `}
+      </Script>
       <body className={`${inter.variable} antialiased`}>
-        <GoogleTagManager gtmId='GTM-N5SFHS62' />
         <NextIntlClientProvider>
           <ContextProvider>
             <Header />
