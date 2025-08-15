@@ -17,6 +17,7 @@ import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
 import { getSrcImage } from '@/utils/image'
+import { createOrder } from '@/services/shop'
 interface Inputs {
   email: string
   name: string
@@ -32,14 +33,42 @@ export default function Checkout() {
   const {
     register,
     handleSubmit,
-    formState: {},
+    formState: { },
   } = useForm<Inputs>({
     mode: 'onSubmit',
   })
 
-  const onSubmit = (data: Inputs) => {
-    console.log(data)
-    toast.success(t('checkoutSuccessfully'))
+  const onSubmit = async (data: Inputs) => {
+    if (paymentMethod === 'momo') {
+      try {
+        const payload = {
+          total_price: checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0),
+          order_products: checkoutItems.map((item) => ({
+            product_id: item.product.id,
+            price: item.option.price,
+            quantity: item.quantity,
+            size: item.option.subOptions.find((subOption) => subOption.key === 'size')?.value || '',
+          })),
+          contacts: {
+            name: data.name,
+            phone: data.phone,
+            email: data.email,
+            address: data.address,
+          },
+        }
+        const response = await createOrder(payload)
+        if (response.payment.payUrl) {
+          localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems))
+          window.location.href = response.payment.payUrl
+        }
+      } catch (error) {
+        console.error(error)
+        toast.error(t('checkoutFailed'))
+      }
+    } else {
+      console.log(data)
+      toast.success(t('checkoutSuccessfully'))
+    }
   }
 
   const onError = (errors: unknown) => {

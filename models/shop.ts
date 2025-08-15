@@ -84,3 +84,56 @@ export type CartItem = {
     }[]
   }
 }
+
+export interface CreateOrderPayload {
+  total_price: number
+  order_products: {
+    product_id: number
+    price: number
+    quantity: number
+    size: string
+  }[]
+  contacts: {
+    name: string
+    phone: string
+    email: string
+    address: string
+  }
+}
+
+export interface CreateOrderResponse {
+  order: {
+    id: number
+    code: string
+    total_price: number
+    order_products: {
+      product: {
+        id: number
+        name: string
+      }
+      price: number
+      quantity: number
+      size: null
+    }[]
+    contacts: {
+      name: string
+      email: string
+      phone: string
+      address: string
+    }
+    status: string
+    email: string
+    created_at: string
+    updated_at: string
+  }
+  payment: {
+    partnerCode: string
+    orderId: string
+    requestId: string
+    amount: number
+    responseTime: number
+    message: string
+    resultCode: number
+    payUrl: string
+  }
+}
