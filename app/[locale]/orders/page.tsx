@@ -10,10 +10,10 @@ export default function OrderResult() {
   const searchParams = useSearchParams()
   const { removeItem } = useCart()
 
-  const status = searchParams.get('resultCode') === '0' ? 'success' : 'failure'
+  const status = searchParams.get('resultCode') === '9000' ? 'success' : 'failure'
   const orderId = searchParams.get('orderId')
   const amount = searchParams.get('amount')
-  const message = searchParams.get('message')
+  const message = decodeURIComponent(searchParams.get('message') || '')
 
   useEffect(() => {
     if (status === 'success') {
