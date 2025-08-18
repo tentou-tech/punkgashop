@@ -31,7 +31,7 @@ export default function CheckoutResult() {
         <div className='text-center space-y-4'>
           <h1 className='text-2xl font-bold text-green-500'>{t('paymentSuccessful')}</h1>
           <p>{t('thankYouForYourPurchase')}</p>
-          <div className='text-left'>
+          <div className='text-center'>
             <p>
               <strong>{t('orderId')}:</strong> {orderId}
             </p>
