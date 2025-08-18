@@ -10,7 +10,7 @@ export default function CheckoutResult() {
   const searchParams = useSearchParams()
   const { removeItem } = useCart()
 
-  const status = searchParams.get('resultCode') === '9000' ? 'success' : 'failure'
+  const status = searchParams.get('resultCode') === '0' ? 'success' : 'failure'
   const orderId = searchParams.get('orderId')
   const amount = searchParams.get('amount')
   const message = decodeURIComponent(searchParams.get('message') || '')
