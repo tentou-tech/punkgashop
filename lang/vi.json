@@ -203,7 +203,15 @@
     "continueShopping": "Tiếp tục mua sắm",
     "paymentMethod": "Phương thức thanh toán",
     "agreeToTerms": "Tôi đã đọc và đồng ý với các điều khoản & điều kiện giao dịch chung của PunkgaShop",
-    "checkoutSuccessfully": "Thanh toán thành công! Cảm ơn bạn đã đặt hàng."
+    "checkoutSuccessfully": "Thanh toán thành công! Cảm ơn bạn đã đặt hàng.",
+    "verifyingPayment": "Đang xác minh thanh toán...",
+    "paymentSuccessful": "Thanh toán thành công",
+    "thankYouForYourPurchase": "Cảm ơn bạn đã mua hàng!",
+    "paymentFailed": "Thanh toán thất bại",
+    "pleaseTryAgain": "Vui lòng thử lại.",
+    "orderId": "Mã đơn hàng",
+    "amount": "Số tiền",
+    "message": "Tin nhắn"
   },
   "common": {
     "currency": "VNĐ"
