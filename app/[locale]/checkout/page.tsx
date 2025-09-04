@@ -29,7 +29,7 @@ export default function Checkout() {
   const t = useTranslations('checkout')
   const cartT = useTranslations('cart')
   const commonT = useTranslations('common')
-  const [paymentMethod, setPaymentMethod] = useState<'momo' | 'cashOnDelivery'>('momo')
+  const [paymentMethod, setPaymentMethod] = useState<'momo' | 'cod'>('momo')
   const {
     register,
     handleSubmit,
@@ -39,35 +39,31 @@ export default function Checkout() {
   })
 
   const onSubmit = async (data: Inputs) => {
-    if (paymentMethod === 'momo') {
-      try {
-        const payload = {
-          total_price: checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0),
-          order_products: checkoutItems.map((item) => ({
-            product_id: item.product.id,
-            price: item.option.price,
-            quantity: item.quantity,
-            size: item.option.subOptions.find((subOption) => subOption.key === 'size')?.value || '',
-          })),
-          contacts: {
-            name: data.name,
-            phone: data.phone,
-            email: data.email,
-            address: data.address,
-          },
-        }
-        const response = await createOrder(payload)
-        if (response.payment.payUrl) {
-          localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems))
-          window.location.href = response.payment.payUrl
-        }
-      } catch (error) {
-        console.error(error)
-        toast.error(t('checkoutFailed'))
+    try {
+      const payload = {
+        total_price: checkoutItems.reduce((total, item) => total + item.option.price * item.quantity, 0),
+        payment_method: paymentMethod,
+        order_products: checkoutItems.map((item) => ({
+          product_id: item.product.id,
+          price: item.option.price,
+          quantity: item.quantity,
+          size: item.option.subOptions.find((subOption) => subOption.key === 'size')?.value || '',
+        })),
+        contacts: {
+          name: data.name,
+          phone: data.phone,
+          email: data.email,
+          address: data.address,
+        },
       }
-    } else {
-      console.log(data)
-      toast.success(t('checkoutSuccessfully'))
+      const response = await createOrder(payload)
+      if (response.payment.payUrl) {
+        localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems))
+        window.location.href = response.payment.payUrl
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error(t('checkoutFailed'))
     }
   }
 
@@ -149,7 +145,7 @@ export default function Checkout() {
           <div className='text-xl font-bold'>{t('paymentMethod')}</div>
           <RadioGroup
             value={paymentMethod}
-            onValueChange={(value) => setPaymentMethod(value as 'momo' | 'cashOnDelivery')}>
+            onValueChange={(value) => setPaymentMethod(value as 'momo' | 'cod')}>
             <label
               htmlFor='momo'
               className={cn(
@@ -163,12 +159,12 @@ export default function Checkout() {
               </div>
             </label>
             <label
-              htmlFor='cashOnDelivery'
+              htmlFor='cod'
               className={cn(
                 'flex items-center gap-3 border rounded p-3',
-                paymentMethod === 'cashOnDelivery' && 'border-Border-border-brand-solid'
+                paymentMethod === 'cod' && 'border-Border-border-brand-solid'
               )}>
-              <RadioGroupItem value='cashOnDelivery' id='cashOnDelivery' />
+              <RadioGroupItem value='cod' id='cod' />
               <div className='flex items-center gap-2'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>
                   <path
