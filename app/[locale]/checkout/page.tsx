@@ -33,7 +33,7 @@ export default function Checkout() {
   const {
     register,
     handleSubmit,
-    formState: { },
+    formState: {},
   } = useForm<Inputs>({
     mode: 'onSubmit',
   })
@@ -143,9 +143,7 @@ export default function Checkout() {
         </div>
         <div className='space-y-4'>
           <div className='text-xl font-bold'>{t('paymentMethod')}</div>
-          <RadioGroup
-            value={paymentMethod}
-            onValueChange={(value) => setPaymentMethod(value as 'momo' | 'cod')}>
+          <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as 'momo' | 'cod')}>
             <label
               htmlFor='momo'
               className={cn(
@@ -155,7 +153,7 @@ export default function Checkout() {
               <RadioGroupItem value='momo' id='momo' />
               <div className='flex items-center gap-2'>
                 <Image src={Momo} alt='Momo' />
-                <Label>Momo</Label>
+                <Label>MoMo</Label>
               </div>
             </label>
             <label

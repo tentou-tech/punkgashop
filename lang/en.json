@@ -54,7 +54,7 @@
     "title": "PAYMENT METHODS",
     "availableOptions": "Available Payment Options:",
     "cashOnDelivery": "Cash on Delivery (COD)",
-    "eWallets": "E-Wallet Payment: Momo",
+    "eWallets": "E-Wallet Payment: MoMo",
     "conditionsTitle": "Conditions of Application:",
     "conditionsContent1": "This payment policy applies to all products available on the website.",
     "conditionsContent2": "Applicable to customers within our delivery coverage area.",
@@ -211,7 +211,8 @@
     "pleaseTryAgain": "Please try again.",
     "orderId": "Order ID",
     "amount": "Amount",
-    "message": "Message"
+    "message": "Message",
+    "checkoutFailed": "Checkout failed. Please try again."
   },
   "common": {
     "currency": "VNĐ"
