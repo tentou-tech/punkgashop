@@ -14,9 +14,9 @@ const inter = Inter({
   subsets: ['latin'],
 })
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // Get the locale from params
-  const locale = params.locale
+  const { locale } = await params
 
   // Define the type for our metadata structure
   type LocaleMetadata = {

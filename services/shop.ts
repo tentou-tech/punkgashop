@@ -1,5 +1,10 @@
-import { ProductCollection, ProductCollectionDetail, ProductDetail } from '@/models/shop'
+import { CreateOrderPayload, CreateOrderResponse, ProductCollection, ProductCollectionDetail, ProductDetail } from '@/models/shop'
 import axiosInstance from './axios'
+
+export const createOrder = async (payload: CreateOrderPayload): Promise<CreateOrderResponse> => {
+  const response = await axiosInstance.post('/orders', payload)
+  return response.data?.data
+}
 
 export const getCollections = async (): Promise<ProductCollection[]> => {
   const response = await axiosInstance.get('/product-collections')

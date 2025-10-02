@@ -54,7 +54,7 @@
     "title": "PHƯƠNG THỨC THANH TOÁN",
     "availableOptions": "Các hình thức thanh toán hiện có:",
     "cashOnDelivery": "Thanh toán khi nhận hàng (COD)",
-    "eWallets": "Thanh toán qua ví điện tử: Momo",
+    "eWallets": "Thanh toán qua ví điện tử: MoMo",
     "conditionsTitle": "Điều kiện áp dụng:",
     "conditionsContent1": "Chính sách thanh toán áp dụng cho tất cả các sản phẩm có trên website.",
     "conditionsContent2": "Áp dụng cho khách hàng trong phạm vi giao hàng của chúng tôi.",
@@ -203,7 +203,16 @@
     "continueShopping": "Tiếp tục mua sắm",
     "paymentMethod": "Phương thức thanh toán",
     "agreeToTerms": "Tôi đã đọc và đồng ý với các điều khoản & điều kiện giao dịch chung của PunkgaShop",
-    "checkoutSuccessfully": "Thanh toán thành công! Cảm ơn bạn đã đặt hàng."
+    "checkoutSuccessfully": "Thanh toán thành công! Cảm ơn bạn đã đặt hàng.",
+    "verifyingPayment": "Đang xác minh thanh toán...",
+    "paymentSuccessful": "Thanh toán thành công",
+    "thankYouForYourPurchase": "Cảm ơn bạn đã mua hàng!",
+    "paymentFailed": "Thanh toán thất bại",
+    "pleaseTryAgain": "Vui lòng thử lại.",
+    "orderId": "Mã đơn hàng",
+    "amount": "Số tiền",
+    "message": "Tin nhắn",
+    "checkoutFailed": "Thanh toán thất bại. Vui lòng thử lại."
   },
   "common": {
     "currency": "VNĐ"
