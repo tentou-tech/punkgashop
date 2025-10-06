@@ -7,7 +7,6 @@ import { Check, ChevronDown, Globe, Menu, Search, ShoppingBag, X } from 'lucide-
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Button } from './ui/button'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from './ui/navigation-menu'
 
 function LanguageSwitcher({ currentLocale, pathname }: { currentLocale: string; pathname: string }) {
@@ -73,7 +72,6 @@ export default function Header() {
         <div className='flex items-center mr-2'>
           <LanguageSwitcher currentLocale={locale} pathname={pathname} />
         </div>
-        <Button className='hidden md:flex'>{t('login')}</Button>
         {/* Mobile Menu Button - Only visible on mobile */}
         <button className='md:hidden flex items-center justify-center' onClick={() => setMobileMenuOpen(true)}>
           <Menu className='w-6 h-6' />
@@ -97,9 +95,6 @@ export default function Header() {
               <div className='flex justify-center mb-4'>
                 <LanguageSwitcher currentLocale={locale} pathname={pathname} />
               </div>
-              <Button className='w-full mt-2' onClick={() => setMobileMenuOpen(false)}>
-                {t('login')}
-              </Button>
             </div>
           </div>
         </div>
