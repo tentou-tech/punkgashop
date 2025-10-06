@@ -4,7 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useCart } from '@/provider/cart'
 import { Check, ChevronDown, Globe, Menu, Search, ShoppingBag, X } from 'lucide-react'
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import Image from 'next/image'
 import { useState } from 'react'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from './ui/navigation-menu'
@@ -38,7 +38,6 @@ function LanguageSwitcher({ currentLocale, pathname }: { currentLocale: string; 
 }
 
 export default function Header() {
-  const t = useTranslations('header')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { items } = useCart()
   const pathname = usePathname()
