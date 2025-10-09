@@ -2,7 +2,7 @@
 import Logo from '@/assets/Logo_bnw.svg'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
-// import BadgeBCT from '@/assets/bct.png'
+import BadgeBCT from '@/assets/bct.png'
 import { useTranslations } from 'next-intl'
 export default function Footer() {
   const t = useTranslations('footer')
@@ -84,7 +84,7 @@ export default function Footer() {
               {t('returnPolicy')}
             </Link>
           </div>
-          <div>{/* <Image src={BadgeBCT} alt='badge bct' className='w-[150px] h-auto' /> */}</div>
+          <Link href='http://online.gov.vn/Website/chi-tiet-134129' target='_blank'><Image src={BadgeBCT} alt='badge bct' className='w-[150px] h-auto' /></Link>
         </div>
       </div>
       <div className='text-Text-Default-text-tertiary text-sm opacity-60 w-full text-center my-5'>
