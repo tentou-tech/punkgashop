@@ -32,7 +32,9 @@ export default function AllCollection() {
               </div>
               <div className='self-stretch inline-flex justify-start items-center gap-1'>
                 <div className='justify-start text-[#9091a0] text-xs md:text-sm font-normal'>{t('by')}</div>
-                <div className='justify-start text-white text-xs md:text-sm font-normal'>{collection.creator.name}</div>
+                <div className='justify-start text-white text-xs md:text-sm font-normal'>
+                  {collection.creator.pen_name || collection.creator.name}
+                </div>
               </div>
             </div>
             <div className='self-stretch justify-start text-[#9091a0] text-xs md:text-sm font-normal mt-2 md:mt-3 line-clamp-2 md:line-clamp-3'>

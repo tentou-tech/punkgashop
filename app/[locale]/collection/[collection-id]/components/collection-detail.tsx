@@ -49,7 +49,7 @@ export default function CollectionDetail() {
           className='w-[120px] h-[120px] object-cover rounded-full overflow-hidden'
         />
         <div className='text-center flex items-center gap-1 justify-start text-white text-2xl md:text-3xl font-bold'>
-          {data?.creator.name || data?.creator.pen_name}
+          {data?.creator.pen_name || data?.creator.name}
           <Link href={`https://punkga.me/creator/${data?.creator.slug}`} target='_blank'>
             <svg xmlns='http://www.w3.org/2000/svg' width='38' height='39' viewBox='0 0 38 39' fill='none'>
               <path
