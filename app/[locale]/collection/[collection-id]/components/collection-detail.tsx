@@ -202,7 +202,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
       className='relative pb-4 md:pb-6 [&:hover_.add-to-cart]:block cursor-pointer'>
       <div className='h-5 md:h-6 px-1 py-0.5 bg-[#00e160] rounded-xs inline-flex justify-center items-center absolute top-2 left-2'>
         <div className='px-1 flex justify-center items-center gap-2'>
-          <div className='text-center justify-center text-[#09090a] text-[10px] md:text-xs font-bold'>
+          <div className='text-center justify-center text-[#09090a] text-[10px] md:text-xs font-bold z-10'>
             {t('preOrder')}
           </div>
         </div>
