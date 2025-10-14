@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
             </div>
             <div className='text-xs text-Text-Default-text-tertiary'>
-              Mã số thuế 0110916606 • 17/12/2024 • Đội Thuế quận Thanh Xuân
+              {t('taxInfo')}
             </div>
             <div className='self-stretch flex flex-col justify-start items-start gap-1.5'>
               <div className='self-stretch inline-flex justify-start items-start gap-1'>
