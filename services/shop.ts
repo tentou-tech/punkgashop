@@ -1,4 +1,10 @@
-import { CreateOrderPayload, CreateOrderResponse, ProductCollection, ProductCollectionDetail, ProductDetail } from '@/models/shop'
+import {
+  CreateOrderPayload,
+  CreateOrderResponse,
+  ProductCollection,
+  ProductCollectionDetail,
+  ProductDetail,
+} from '@/models/shop'
 import axiosInstance from './axios'
 
 export const createOrder = async (payload: CreateOrderPayload): Promise<CreateOrderResponse> => {
@@ -17,4 +23,8 @@ export const getCollectionById = async (id: number): Promise<ProductCollectionDe
 export const getProductById = async (id: number): Promise<ProductDetail> => {
   const response = await axiosInstance.get(`/products/${id}`)
   return response.data?.data || null
+}
+export const getOrderById = async (id: string): Promise<CreateOrderResponse> => {
+  const response = await axiosInstance.get(`/orders/${id}`)
+  return { order: response.data, payment: undefined as any }
 }

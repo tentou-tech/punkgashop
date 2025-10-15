@@ -213,7 +213,20 @@
     "orderId": "Order ID",
     "amount": "Amount",
     "message": "Message",
-    "checkoutFailed": "Checkout failed. Please try again."
+    "checkoutFailed": "Checkout failed. Please try again.",
+    "somethingWentWrong": "Something went wrong!",
+    "orderProcessingError": "We were unable to process your order. Please try again, or contact our support team if the issue persists.",
+    "backToHome": "Back to Home",
+    "loadingOrderDetails": "Loading order details...",
+    "orderCode": "Order code",
+    "date": "Date",
+    "payment": "Payment",
+    "total": "Total",
+    "product": "Product",
+    "size": "Size",
+    "price": "Price",
+    "emailConfirmation": "An email with confirmation has been sent to your address",
+    "saveInvoice": "Save Invoice"
   },
   "common": {
     "currency": "VNĐ"
