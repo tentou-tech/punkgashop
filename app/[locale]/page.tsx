@@ -33,6 +33,7 @@ import XaviaNgBack04 from '@/assets/mock/XaviaNg back 04.png'
 import XaviaNgFront01 from '@/assets/mock/XaviaNg front 01.png'
 import XaviaNgFront02 from '@/assets/mock/XaviaNg front 02.png'
 import XaviaNgFront03 from '@/assets/mock/XaviaNg front 03.png'
+import Link from 'next/link'
 
 export default function Home() {
   const t = useTranslations('home')
@@ -161,7 +162,9 @@ export default function Home() {
             <span className='inline sm:hidden'> </span>
             <span className='text-Text-Brand-text-brand-primary'> & </span> {t('getCoolOutfits')}
           </h2>
-          <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base'>{t('exploreCollection')}</Button>
+          <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base' asChild>
+            <Link href='#collections'>{t('exploreCollection')}</Link>
+          </Button>
         </div>
         <div className='w-full aspect-square sm:h-[400px] md:h-[500px] lg:h-[632px] pr-0 md:pr-5 overflow-hidden'>
           <div className='grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 aspect-square ml-auto h-full'>

@@ -213,7 +213,20 @@
     "orderId": "Mã đơn hàng",
     "amount": "Số tiền",
     "message": "Tin nhắn",
-    "checkoutFailed": "Thanh toán thất bại. Vui lòng thử lại."
+    "checkoutFailed": "Thanh toán thất bại. Vui lòng thử lại.",
+    "somethingWentWrong": "Đã xảy ra sự cố!",
+    "orderProcessingError": "Chúng tôi không thể xử lý đơn hàng của bạn. Vui lòng thử lại hoặc liên hệ với đội ngũ hỗ trợ nếu sự cố vẫn tiếp diễn.",
+    "backToHome": "Về trang chủ",
+    "loadingOrderDetails": "Đang tải thông tin đơn hàng...",
+    "orderCode": "Mã đơn hàng",
+    "date": "Ngày",
+    "payment": "Thanh toán",
+    "total": "Tổng cộng",
+    "product": "Sản phẩm",
+    "size": "Kích cỡ",
+    "price": "Giá",
+    "emailConfirmation": "Email xác nhận đã được gửi đến địa chỉ của bạn",
+    "saveInvoice": "Lưu hóa đơn"
   },
   "common": {
     "currency": "VNĐ"

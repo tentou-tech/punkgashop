@@ -7,17 +7,17 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Textarea } from '@/components/ui/textarea'
 import { Link } from '@/i18n/navigation'
+import { cn } from '@/lib/utils'
 import { CartItem } from '@/models/shop'
 import { useCart } from '@/provider/cart'
+import { createOrder } from '@/services/shop'
+import { getSrcImage } from '@/utils/image'
 import { formatCurrency } from '@/utils/number'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { cn } from '@/lib/utils'
+import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { getSrcImage } from '@/utils/image'
-import { createOrder } from '@/services/shop'
 interface Inputs {
   email: string
   name: string
@@ -29,7 +29,7 @@ export default function Checkout() {
   const t = useTranslations('checkout')
   const cartT = useTranslations('cart')
   const commonT = useTranslations('common')
-  const [paymentMethod, setPaymentMethod] = useState<'momo' | 'cod'>('momo')
+  const [paymentMethod, setPaymentMethod] = useState<'momo'>('momo')
   const {
     register,
     handleSubmit,
@@ -143,7 +143,7 @@ export default function Checkout() {
         </div>
         <div className='space-y-4'>
           <div className='text-xl font-bold'>{t('paymentMethod')}</div>
-          <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as 'momo' | 'cod')}>
+          <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as 'momo')}>
             <label
               htmlFor='momo'
               className={cn(
@@ -154,25 +154,6 @@ export default function Checkout() {
               <div className='flex items-center gap-2'>
                 <Image src={Momo} alt='Momo' />
                 <Label>MoMo</Label>
-              </div>
-            </label>
-            <label
-              htmlFor='cod'
-              className={cn(
-                'flex items-center gap-3 border rounded p-3',
-                paymentMethod === 'cod' && 'border-Border-border-brand-solid'
-              )}>
-              <RadioGroupItem value='cod' id='cod' />
-              <div className='flex items-center gap-2'>
-                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>
-                  <path
-                    fillRule='evenodd'
-                    clipRule='evenodd'
-                    d='M2.87868 4.87868C3.44129 4.31607 4.20435 4 5 4H15C15.7956 4 16.5587 4.31607 17.1213 4.87868C17.6839 5.44129 18 6.20435 18 7V8H19C20.6569 8 22 9.34315 22 11V17C22 18.6569 20.6569 20 19 20H9C7.34315 20 6 18.6569 6 17V16H5C4.20435 16 3.44129 15.6839 2.87868 15.1213C2.31607 14.5587 2 13.7956 2 13V7C2 6.20435 2.31607 5.44129 2.87868 4.87868ZM8 17C8 17.5523 8.44772 18 9 18H19C19.5523 18 20 17.5523 20 17V11C20 10.4477 19.5523 10 19 10H9C8.44772 10 8 10.4477 8 11V17ZM6 14H5C4.73478 14 4.48043 13.8946 4.29289 13.7071C4.10536 13.5196 4 13.2652 4 13V7C4 6.73478 4.10536 6.48043 4.29289 6.29289C4.48043 6.10536 4.73478 6 5 6H15C15.2652 6 15.5196 6.10536 15.7071 6.29289C15.8946 6.48043 16 6.73478 16 7V8H9C7.34315 8 6 9.34315 6 11V14ZM14 13C13.4477 13 13 13.4477 13 14C13 14.5523 13.4477 15 14 15C14.5523 15 15 14.5523 15 14C15 13.4477 14.5523 13 14 13ZM11 14C11 12.3431 12.3431 11 14 11C15.6569 11 17 12.3431 17 14C17 15.6569 15.6569 17 14 17C12.3431 17 11 15.6569 11 14Z'
-                    fill='#737584'
-                  />
-                </svg>
-                <Label>Cash On Delivery</Label>
               </div>
             </label>
           </RadioGroup>

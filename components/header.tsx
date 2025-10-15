@@ -3,7 +3,7 @@ import Logo from '@/assets/Logo.svg'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useCart } from '@/provider/cart'
-import { Check, ChevronDown, Globe, Menu, Search, ShoppingBag, X } from 'lucide-react'
+import { Check, ChevronDown, Globe, Menu, ShoppingBag, X } from 'lucide-react'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -67,7 +67,6 @@ export default function Header() {
             {items.reduce((total, item) => total + item.quantity, 0)}
           </div>
         </Link>
-        <Search className='w-6 h-6' />
         <div className='flex items-center mr-2'>
           <LanguageSwitcher currentLocale={locale} pathname={pathname} />
         </div>
