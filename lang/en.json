@@ -238,6 +238,9 @@
     "supportArtist": "Support your favorite artist",
     "getCoolOutfits": "get more cool outfits",
     "exploreCollection": "EXPLORE COLLECTION",
-    "collectionImage": "Collection Image {{index}}"
+    "collectionImage": "Collection Image {{index}}",
+    "preOrderNow": "Pre-order now",
+    "exclusiveCollection": "Exclusive collections from Vietnamese comic artists",
+    "punkgaShopMission": "Together with PunkgaMe, we nurture and foster the young creative generation with talent to reach out to the world"
   }
 }
