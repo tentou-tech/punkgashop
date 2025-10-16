@@ -15,7 +15,8 @@ import { getSrcImage } from '@/utils/image'
 import { formatCurrency } from '@/utils/number'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 interface Inputs {
@@ -29,6 +30,7 @@ export default function Checkout() {
   const t = useTranslations('checkout')
   const cartT = useTranslations('cart')
   const commonT = useTranslations('common')
+  const router = useRouter()
   const [paymentMethod, setPaymentMethod] = useState<'momo'>('momo')
   const {
     register,
@@ -59,7 +61,7 @@ export default function Checkout() {
       const response = await createOrder(payload)
       if (response.payment.payUrl) {
         localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems))
-        window.location.href = response.payment.payUrl
+        router.push(response.payment.payUrl)
       }
     } catch (error) {
       console.error(error)
@@ -71,6 +73,13 @@ export default function Checkout() {
     console.error(errors)
   }
   const { checkoutItems } = useCart()
+
+  useEffect(() => {
+    if (checkoutItems.length === 0) {
+      toast.error(cartT('cartEmpty'))
+      router.replace('/')
+    }
+  }, [checkoutItems, cartT])
 
   return (
     <div className='py-8 px-4 md:px-6 space-y-6 max-w-[1400px] overflow-hidden mx-auto grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8'>

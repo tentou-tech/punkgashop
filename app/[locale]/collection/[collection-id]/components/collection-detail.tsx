@@ -1,29 +1,28 @@
 'use client'
+import DefaultAvatar from '@/assets/Avatar.png'
 import Discord from '@/assets/icons/discord'
 import Facebook from '@/assets/icons/facebook'
 import Instagram from '@/assets/icons/instagram'
 import Tiktok from '@/assets/icons/tiktok'
 import X from '@/assets/icons/x'
 import Youtube from '@/assets/icons/youtube'
-import { getCollectionById } from '@/services/shop'
-import Image from 'next/image'
-import { useRouter } from '@/i18n/navigation'
-import useSWR from 'swr'
-import { useParams } from 'next/navigation'
-import Mock from '@/assets/mock.png'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { sizeOrder } from '@/config'
+import { useRouter } from '@/i18n/navigation'
+import { cn } from '@/lib/utils'
 import { ProductCollectionDetail } from '@/models/shop'
 import { useCart } from '@/provider/cart'
+import { getCollectionById } from '@/services/shop'
+import { getSrcImage } from '@/utils/image'
 import { formatCurrency } from '@/utils/number'
 import { Minus, PlusIcon } from 'lucide-react'
-import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import DefaultAvatar from '@/assets/Avatar.png'
+import Image from 'next/image'
 import Link from 'next/link'
-import { getSrcImage } from '@/utils/image'
-import { cn } from '@/lib/utils'
+import { useParams } from 'next/navigation'
+import { useState } from 'react'
+import useSWR from 'swr'
 export default function CollectionDetail() {
   const t = useTranslations('collection')
   const params = useParams()
@@ -230,7 +229,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
               <div className='space-y-4'>
                 <div className='flex gap-3 md:gap-6 items-center'>
                   <Image
-                    src={Mock}
+                    src={getSrcImage(selectedOption.product_images[0].image)}
                     alt='Product'
                     width={500}
                     height={500}

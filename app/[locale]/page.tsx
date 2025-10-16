@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import AllCollection from './components/all-collection'
 import { useTranslations } from 'next-intl'
-
+import Backdrop from '@/assets/backdrop.png'
 // Mock images imports
 import BoredgaylordFront01 from '@/assets/mock/Boredgaylord front 01.png'
 import BoredgaylordFront02 from '@/assets/mock/Boredgaylord front 02.png'
@@ -84,8 +84,9 @@ export default function Home() {
         height={1000}
         className='w-full h-auto block lg:hidden'
       />
-      <div className='grid grid-cols-1 md:grid-cols-2 bg-black'>
-        <div className='flex justify-center flex-col gap-2 px-6 py-8 md:py-0 md:pl-[10%] lg:pl-[20%]'>
+      <div className='grid grid-cols-1 md:grid-cols-2 bg-black relative'>
+        <Image src={Backdrop} alt='Background' fill className='object-cover opacity-20' />
+        <div className='flex justify-center flex-col gap-2 px-6 py-8 md:py-0 md:pl-[10%] lg:pl-[20%] relative z-10'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='w-full max-w-[300px] md:max-w-[350px] lg:max-w-[420px] h-auto'
@@ -133,40 +134,16 @@ export default function Home() {
             />
           </svg>
           <h1 className='hidden'>Punkga Shop</h1>
-          <div className='flex flex-wrap items-center gap-2 uppercase font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl'>
-            <span className='text-Text-Brand-text-brand-primary'>{t('artist')}</span>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9'
-              viewBox='0 0 34 34'
-              fill='none'>
-              <path d='M1.58203 1L33 33' stroke='white' />
-              <path d='M32.418 1L0.999991 33' stroke='white' />
-            </svg>
-            <span>{t('love')}</span>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9'
-              viewBox='0 0 34 34'
-              fill='none'>
-              <path d='M1.58203 1L33 33' stroke='white' />
-              <path d='M32.418 1L0.999991 33' stroke='white' />
-            </svg>
-            <span>{t('community')}</span>
-          </div>
-          <h2 className='text-Text-Default-text-secondary text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
-            {t('supportArtist')}
-            <span className='hidden sm:inline'>
-              <br />
-            </span>{' '}
-            <span className='inline sm:hidden'> </span>
-            <span className='text-Text-Brand-text-brand-primary'> & </span> {t('getCoolOutfits')}
+          <h2 className='text-Text-Default-text-secondary sm:text-lg md:text-xl lg:text-2xl font-bold'>
+            {t('exclusiveCollection')}
+            <br />
+            {t('punkgaShopMission')}
           </h2>
           <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base' asChild>
-            <Link href='#collections'>{t('exploreCollection')}</Link>
+            <Link href='#collections'>{t('preOrderNow')}</Link>
           </Button>
         </div>
-        <div className='w-full aspect-square sm:h-[400px] md:h-[500px] lg:h-[632px] pr-0 md:pr-5 overflow-hidden'>
+        <div className='w-full aspect-square sm:h-[400px] md:h-[500px] lg:h-[632px] pr-0 md:pr-5 overflow-hidden relative z-10'>
           <div className='grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 aspect-square ml-auto h-full'>
             {/* First column - moves up */}
             <div className='relative h-full'>

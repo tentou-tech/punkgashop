@@ -12,7 +12,7 @@ export default function Checkout() {
   const t = useTranslations('cart')
   const commonT = useTranslations('common')
   const router = useRouter()
-  const { items } = useCart()
+  const { items, setCheckoutItems } = useCart()
   const { back } = useRouter()
   return (
     <div className='py-8 px-4 md:px-6 space-y-6 max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_325px] gap-8'>
@@ -59,6 +59,7 @@ export default function Checkout() {
           className='w-full justify-center'
           onClick={() => {
             router.push('/checkout')
+            setCheckoutItems(items)
           }}>
           {t('checkout')}
         </Button>
