@@ -89,7 +89,7 @@ export default function Home() {
         <div className='flex justify-center flex-col gap-2 px-6 py-8 md:py-0 md:pl-[10%] lg:pl-[20%] relative z-10'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='w-full max-w-[300px] md:max-w-[350px] lg:max-w-[420px] h-auto'
+            className='w-full max-w-[300px] md:max-w-[350px] lg:max-w-[420px] h-auto pb-2'
             viewBox='0 0 420 49'
             fill='none'>
             <path
@@ -134,11 +134,10 @@ export default function Home() {
             />
           </svg>
           <h1 className='hidden'>Punkga Shop</h1>
-          <h2 className='text-Text-Default-text-secondary sm:text-lg md:text-xl lg:text-2xl font-bold'>
-            {t('exclusiveCollection')}
-            <br />
-            {t('punkgaShopMission')}
-          </h2>
+          <div className='text-Text-Default-text-secondary mt-3 sm:text-lg md:text-xl lg:text-2xl font-bold'>
+            <h2 className='w-full max-w-[315px]'>{t('exclusiveCollection')}</h2>
+            <h2 className='mt-3 block w-full max-w-[350px]'>{t('punkgaShopMission')}</h2>
+          </div>
           <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base' asChild>
             <Link href='#collections'>{t('preOrderNow')}</Link>
           </Button>
