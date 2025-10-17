@@ -5,74 +5,121 @@ import Image from 'next/image'
 import AllCollection from './components/all-collection'
 import { useTranslations } from 'next-intl'
 import Backdrop from '@/assets/backdrop.png'
-// Mock images imports
-import BoredgaylordFront01 from '@/assets/mock/Boredgaylord front 01.png'
-import BoredgaylordFront02 from '@/assets/mock/Boredgaylord front 02.png'
-import BoredgaylordFront03 from '@/assets/mock/Boredgaylord front 03.png'
-import BoredgaylordFront04 from '@/assets/mock/Boredgaylord front 04.png'
-import BoredgaylordFront05 from '@/assets/mock/Boredgaylord front 05.png'
-import BoredgaylordFront06 from '@/assets/mock/Boredgaylord front 06.png'
-import HCC01Back from '@/assets/mock/HCC 01 back.png'
-import HCC01Front from '@/assets/mock/HCC 01 front.png'
-import HCC02Back from '@/assets/mock/HCC 02 back.png'
-import HCC02Front from '@/assets/mock/HCC 02 front.png'
-import MirolesWBack01 from '@/assets/mock/MirolesW back 01.png'
-import MirolesWBack02 from '@/assets/mock/MirolesW back 02.png'
-import MirolesWBack03 from '@/assets/mock/MirolesW back 03.png'
-import MirolesWFront01 from '@/assets/mock/MirolesW front 01.png'
-import MirolesWFront02 from '@/assets/mock/MirolesW front 02.png'
-import MirolesWFront03 from '@/assets/mock/MirolesW front 03.png'
-import MoffiBack01 from '@/assets/mock/Moffi back 01.png'
-import MoffiBack02 from '@/assets/mock/Moffi back 02.png'
-import MoffiFront01 from '@/assets/mock/Moffi front 01.png'
-import MoffiFront02 from '@/assets/mock/Moffi front 02.png'
-import XaviaNgBack01 from '@/assets/mock/XaviaNg back 01.png'
-import XaviaNgBack02 from '@/assets/mock/XaviaNg back 02.png'
-import XaviaNgBack03 from '@/assets/mock/XaviaNg back 03.png'
-import XaviaNgBack04 from '@/assets/mock/XaviaNg back 04.png'
-import XaviaNgFront01 from '@/assets/mock/XaviaNg front 01.png'
-import XaviaNgFront02 from '@/assets/mock/XaviaNg front 02.png'
-import XaviaNgFront03 from '@/assets/mock/XaviaNg front 03.png'
+// Product images imports
+import anhMeoSau01 from '@/assets/product-images/anh_meo_sau_01.png'
+import allenLamTruoc02 from '@/assets/product-images/allen_lam_truoc_02.png'
+import buckyDukeTruoc02 from '@/assets/product-images/bucky_duke_truoc_02.png'
+import aoSauTrang01 from '@/assets/product-images/ao_sau_trang_01.png'
+import aoSauTrang1 from '@/assets/product-images/ao_sau_trang_1.png'
+import banhRanTruoc02 from '@/assets/product-images/banh_ran_truoc_02.png'
+import longXanhSau01 from '@/assets/product-images/long_xanh_sau_01.png'
+import cuSanTruoc02 from '@/assets/product-images/cu_san_truoc_02.png'
+import cuongSau01 from '@/assets/product-images/cuong_sau_01.png'
+import doopleTruoc02 from '@/assets/product-images/doople_truoc_02.png'
+import duongTruoc01 from '@/assets/product-images/duong_truoc_01.png'
+import echTruoc02 from '@/assets/product-images/ech_truoc_02.png'
+import echTruoc05 from '@/assets/product-images/ech_truoc_05.png'
+import xamTruoc03 from '@/assets/product-images/xam_truoc_03.png'
+import hcc01Sau from '@/assets/product-images/hcc_01_sau.png'
+import hackSau01 from '@/assets/product-images/hack_sau_01.png'
+import hungSau02 from '@/assets/product-images/hung_sau_02.png'
+import iidSau01 from '@/assets/product-images/iid_sau_01.png'
+import jokTruoc03 from '@/assets/product-images/jok_truoc_03.png'
+import lamVuSau1 from '@/assets/product-images/lam_vu_sau_1.png'
+import lcr25Sau03 from '@/assets/product-images/lcr25_sau_03.png'
+import lamHoangTrucTruoc03 from '@/assets/product-images/lam_hoang_truc_truoc_03.png'
+import linhRabTruoc01 from '@/assets/product-images/linh_rab_truoc_01.png'
+import luciferTruoc02 from '@/assets/product-images/lucifer_truoc_02.png'
+import mirolesWTruoc01 from '@/assets/product-images/miroles_w_truoc_01.png'
+import moffiSau01 from '@/assets/product-images/moffi_sau_01.png'
+import moniTruoc01 from '@/assets/product-images/moni_truoc_01.png'
+import nachiTruoc02 from '@/assets/product-images/nachi_truoc_02.png'
+import nguyenThanhToanTruoc03 from '@/assets/product-images/nguyen_thanh_toan_truoc_03.png'
+import nheyiiSau03 from '@/assets/product-images/nheyii_sau_03.png'
+import phatBearTruoc01 from '@/assets/product-images/phat_bear_truoc_01.png'
+import phylloTruoc02 from '@/assets/product-images/phyllo_truoc_02.png'
+import ruoiTruoc04 from '@/assets/product-images/ruoi_truoc_04.png'
+import sdpTruoc02 from '@/assets/product-images/sdp_truoc_02.png'
+import sauSau04 from '@/assets/product-images/sau_sau_04.png'
+import sherloxTruoc03 from '@/assets/product-images/sherlox_truoc_03.png'
+import skyfishTruoc02 from '@/assets/product-images/skyfish_truoc_02.png'
+import tiniTruoc01 from '@/assets/product-images/tini_truoc_01.png'
+import tomoSau01 from '@/assets/product-images/tomo_sau_01.png'
+import vuSau03 from '@/assets/product-images/vu_sau_03.png'
+import xaviaNgTruoc03 from '@/assets/product-images/xavia_ng_truoc_03.png'
+import yattaDTruoc02 from '@/assets/product-images/yatta_d_truoc_02.png'
+import yuukoTruoc02 from '@/assets/product-images/yuuko_truoc_02.png'
+import chuonTruoc01 from '@/assets/product-images/chuon_truoc_01.png'
+import dbTruoc02 from '@/assets/product-images/db_truoc_02.png'
 import Link from 'next/link'
 
 export default function Home() {
   const t = useTranslations('home')
-  // Organize images into 3 columns with equal number of images (9 each)
-  const column1Images = [
-    BoredgaylordFront01,
-    BoredgaylordFront02,
-    BoredgaylordFront03,
-    BoredgaylordFront04,
-    BoredgaylordFront05,
-    BoredgaylordFront06,
-    HCC01Back,
-    HCC01Front,
-    HCC02Back,
+
+  // All 45 product images
+  const allProductImages = [
+    anhMeoSau01,
+    allenLamTruoc02,
+    buckyDukeTruoc02,
+    aoSauTrang01,
+    aoSauTrang1,
+    banhRanTruoc02,
+    longXanhSau01,
+    cuSanTruoc02,
+    cuongSau01,
+    doopleTruoc02,
+    duongTruoc01,
+    echTruoc02,
+    echTruoc05,
+    xamTruoc03,
+    hcc01Sau,
+    hackSau01,
+    hungSau02,
+    iidSau01,
+    jokTruoc03,
+    lamVuSau1,
+    lcr25Sau03,
+    lamHoangTrucTruoc03,
+    linhRabTruoc01,
+    luciferTruoc02,
+    mirolesWTruoc01,
+    moffiSau01,
+    moniTruoc01,
+    nachiTruoc02,
+    nguyenThanhToanTruoc03,
+    nheyiiSau03,
+    phatBearTruoc01,
+    phylloTruoc02,
+    ruoiTruoc04,
+    sdpTruoc02,
+    sauSau04,
+    sherloxTruoc03,
+    skyfishTruoc02,
+    tiniTruoc01,
+    tomoSau01,
+    vuSau03,
+    xaviaNgTruoc03,
+    yattaDTruoc02,
+    yuukoTruoc02,
+    chuonTruoc01,
+    dbTruoc02,
   ]
 
-  const column2Images = [
-    HCC02Front,
-    MoffiBack01,
-    MoffiBack02,
-    MoffiFront01,
-    MoffiFront02,
-    MirolesWBack01,
-    MirolesWBack02,
-    MirolesWBack03,
-    MirolesWFront01,
-  ]
+  // Function to shuffle array and select first n elements
+  const getRandomImages = (images: any[], count: number) => {
+    const shuffled = [...images].sort(() => Math.random() - 0.5)
+    return shuffled.slice(0, count)
+  }
 
-  const column3Images = [
-    MirolesWFront02,
-    MirolesWFront03,
-    XaviaNgBack01,
-    XaviaNgBack02,
-    XaviaNgBack03,
-    XaviaNgBack04,
-    XaviaNgFront01,
-    XaviaNgFront02,
-    XaviaNgFront03,
-  ]
+  // Divide into 3 groups of 15 images each
+  const group1 = allProductImages.slice(0, 15)
+  const group2 = allProductImages.slice(15, 30)
+  const group3 = allProductImages.slice(30, 45)
+
+  // Randomly select 9 images from each group
+  const column1Images = getRandomImages(group1, 9)
+  const column2Images = getRandomImages(group2, 9)
+  const column3Images = getRandomImages(group3, 9)
 
   return (
     <main>
