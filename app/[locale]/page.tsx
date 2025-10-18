@@ -133,7 +133,7 @@ export default function Home() {
       />
       <div className='grid grid-cols-1 md:grid-cols-2 bg-black relative'>
         <Image src={Backdrop} alt='Background' fill className='object-cover opacity-20' />
-        <div className='flex justify-center flex-col gap-2 px-6 py-8 md:py-0 md:pl-[10%] lg:pl-[20%] relative z-10'>
+        <div className='flex justify-center flex-col gap-2 px-4 md:px-6 py-8 md:py-0 md:pl-[10%] lg:pl-[20%] relative z-10'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='w-full max-w-[300px] md:max-w-[350px] lg:max-w-[420px] h-auto pb-2'
