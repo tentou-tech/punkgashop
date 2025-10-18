@@ -182,8 +182,8 @@ export default function Home() {
           </svg>
           <h1 className='hidden'>Punkga Shop</h1>
           <div className='text-Text-Default-text-secondary mt-3 sm:text-lg md:text-xl lg:text-2xl font-bold'>
-            <h2 className='w-full max-w-[315px]'>{t('exclusiveCollection')}</h2>
-            <h2 className='mt-3 block w-full max-w-[350px]'>{t('punkgaShopMission')}</h2>
+            <h2 className='w-full max-w-[343px]'>{t('exclusiveCollection')}</h2>
+            <h2 className='mt-3 block w-full max-w-[390px]'>{t('punkgaShopMission')}</h2>
           </div>
           <Button className='w-fit mt-4 sm:mt-6 text-sm sm:text-base' asChild>
             <Link href='#collections'>{t('preOrderNow')}</Link>

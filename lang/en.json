@@ -1,6 +1,7 @@
 {
   "header": {
-    "login": "Login"
+    "login": "Login",
+    "comicNav": "Vietnam Comics"
   },
   "shippingPolicy": {
     "title": "Shipping, Delivery, and Inspection Policy",
