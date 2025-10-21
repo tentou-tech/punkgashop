@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Textarea } from '@/components/ui/textarea'
+import useIsMobile from '@/hooks/useIsMobile'
 import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { CartItem } from '@/models/shop'
@@ -13,6 +14,7 @@ import { useCart } from '@/provider/cart'
 import { createOrder } from '@/services/shop'
 import { getSrcImage } from '@/utils/image'
 import { formatCurrency } from '@/utils/number'
+import { InfoIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -30,8 +32,9 @@ export default function Checkout() {
   const t = useTranslations('checkout')
   const cartT = useTranslations('cart')
   const commonT = useTranslations('common')
+  const { isMobile } = useIsMobile()
   const router = useRouter()
-  const [paymentMethod, setPaymentMethod] = useState<'momo'>('momo')
+  const [paymentMethod, setPaymentMethod] = useState<'momo' | 'qr'>('qr')
   const {
     register,
     handleSubmit,
@@ -152,19 +155,56 @@ export default function Checkout() {
         </div>
         <div className='space-y-4'>
           <div className='text-xl font-bold'>{t('paymentMethod')}</div>
-          <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as 'momo')}>
+          <RadioGroup value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as any)}>
             <label
-              htmlFor='momo'
+              htmlFor='qr'
               className={cn(
-                'flex items-center gap-3 border rounded p-3',
-                paymentMethod === 'momo' && 'border-Border-border-brand-solid'
+                'flex gap-3 border rounded p-3',
+                paymentMethod === 'qr' && 'border-Border-border-brand-solid'
               )}>
-              <RadioGroupItem value='momo' id='momo' />
-              <div className='flex items-center gap-2'>
-                <Image src={Momo} alt='Momo' />
-                <Label>MoMo</Label>
+              <RadioGroupItem value='qr' id='qr' className='mt-1' />
+              <div className='w-full'>
+                <div className='flex justify-between items-center w-full'>
+                  <div className='flex items-center gap-2'>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>
+                      <path
+                        d='M4 4H8.01V2H2V8H4V4ZM4 16H2V22H8.01V20H4V16ZM20 20H16V22H22V16H20V20ZM16 4H20V8H22V2H16V4Z'
+                        fill='#00E160'
+                      />
+                      <path
+                        d='M5 11H11V5H5V11ZM7 7H9V9H7V7ZM5 19H11V13H5V19ZM7 15H9V17H7V15ZM19 5H13V11H19V5ZM17 9H15V7H17V9ZM13.01 13H15.01V15H13.01V13ZM15.01 15H17.01V17H15.01V15ZM17.01 17H19.01V19H17.01V17ZM17.01 13H19.01V15H17.01V13Z'
+                        fill='#00E160'
+                      />
+                    </svg>
+                    <Label>QR Pay</Label>
+                  </div>
+                  <div className='text-Text-Default-text-tertiary text-xs flex items-center gap-1'>
+                    <InfoIcon className='size-4' />
+                    Powered by Momo
+                  </div>
+                </div>
+                <div className='text-Text-Default-text-tertiary text-xs mt-1'>
+                  Supports <span className='text-Text-Brand-text-brand-primary'>all banks</span> that offer QR payments.
+                </div>
               </div>
             </label>
+            {isMobile && (
+              <label
+                htmlFor='momo'
+                className={cn(
+                  'flex gap-3 border rounded p-3',
+                  paymentMethod === 'momo' && 'border-Border-border-brand-solid'
+                )}>
+                <RadioGroupItem value='momo' id='momo' className='mt-1' />
+                <div>
+                  <div className='flex items-center gap-2'>
+                    <Image src={Momo} alt='Momo' />
+                    <Label>MoMo</Label>
+                  </div>
+                  <div className='text-Text-Default-text-tertiary text-xs mt-1'>Using the Momo app to pay</div>
+                </div>
+              </label>
+            )}
           </RadioGroup>
         </div>
         <div className='flex items-center gap-2'>
