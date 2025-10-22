@@ -23,6 +23,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useState } from 'react'
 import useSWR from 'swr'
+import SizeGuideImage from '@/assets/size-guide.png'
 export default function CollectionDetail() {
   const t = useTranslations('collection')
   const params = useParams()
@@ -286,6 +287,25 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
                             </button>
                           ))}
                       </div>
+                      {key === 'size' && (
+                        <>
+                          <Dialog>
+                            <DialogTrigger className='text-Text-Default-text-tertiary text-sm underline'>
+                              Size Guide
+                            </DialogTrigger>
+                            <DialogContent className='!max-w-5xl'>
+                              <DialogTitle className='hidden'>Size Guide</DialogTitle>
+                              <Image
+                                src={SizeGuideImage}
+                                alt='Size Guide'
+                                width={400}
+                                height={400}
+                                className='w-full h-auto object-contain'
+                              />
+                            </DialogContent>
+                          </Dialog>
+                        </>
+                      )}
                     </div>
                   )
                 })}
