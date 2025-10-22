@@ -14,6 +14,8 @@ import { useCallback, useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { useTranslations } from 'next-intl'
 import { getSrcImage } from '@/utils/image'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import SizeGuideImage from '@/assets/size-guide.png'
 export default function ProductDetailPage() {
   const params = useParams()
   const productId = params.id
@@ -235,6 +237,25 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
                       </button>
                     ))}
                 </div>
+                {key === 'size' && (
+                  <>
+                    <Dialog>
+                      <DialogTrigger className='text-Text-Default-text-tertiary text-sm underline'>
+                        Size Guide
+                      </DialogTrigger>
+                      <DialogContent className='!max-w-5xl'>
+                        <DialogTitle className='hidden'>Size Guide</DialogTitle>
+                        <Image
+                          src={SizeGuideImage}
+                          alt='Size Guide'
+                          width={400}
+                          height={400}
+                          className='w-full h-auto object-contain'
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </>
+                )}
               </div>
             )
           })}
