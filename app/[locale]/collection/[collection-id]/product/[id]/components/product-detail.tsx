@@ -200,7 +200,9 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
             </div>
           </div>
           {optionKeys.map((key) => {
-            let options = data?.product_options.map((option) => option.option[key as keyof typeof option.option])
+            let options = [
+              ...new Set(data?.product_options.map((option) => option.option[key as keyof typeof option.option])),
+            ]
             let optionType = 'main'
             if (options && typeof options?.[0] !== 'string') {
               optionType = 'sub'
