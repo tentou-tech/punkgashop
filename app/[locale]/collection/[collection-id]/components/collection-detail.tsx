@@ -248,9 +248,11 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
                   </div>
                 </div>
                 {optionKeys.map((key) => {
-                  let options = product.product_options.map(
-                    (option) => option.option[key as keyof typeof option.option]
-                  )
+                  let options = [
+                    ...new Set(
+                      product.product_options.map((option) => option.option[key as keyof typeof option.option])
+                    ),
+                  ]
                   let optionType = 'main'
                   if (typeof options[0] !== 'string') {
                     optionType = 'sub'
