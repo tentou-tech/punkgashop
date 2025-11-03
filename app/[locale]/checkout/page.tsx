@@ -53,6 +53,8 @@ export default function Checkout() {
           price: item.option.price,
           quantity: item.quantity,
           size: item.option.subOptions.find((subOption) => subOption.key === 'size')?.value || '',
+          color: item.option.option.color || '',
+          product_option_id: item.option.id,
         })),
         contacts: {
           name: data.name,
