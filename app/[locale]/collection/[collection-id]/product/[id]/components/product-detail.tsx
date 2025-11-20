@@ -2,13 +2,13 @@
 import { Button } from '@/components/ui/button'
 import { sizeOrder } from '@/config'
 import { ProductDetail as ProductDetailType } from '@/models/shop'
-import { useCart } from '@/provider/cart'
+// import { useCart } from '@/provider/cart'
 import { getProductById } from '@/services/shop'
 import { formatCurrency } from '@/utils/number'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Minus, PlusIcon } from 'lucide-react'
 import Image from 'next/image'
-import { useRouter } from '@/i18n/navigation'
+// import { useRouter } from '@/i18n/navigation'
 import { useParams } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 import useSWR from 'swr'
@@ -53,9 +53,9 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
   const t = useTranslations('product')
   const commonT = useTranslations('common')
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({ loop: true })
-  const { addItem, setCheckoutItems } = useCart()
+  // const { addItem, setCheckoutItems } = useCart()
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const { push } = useRouter()
+  // const { push } = useRouter()
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: 'keepSnaps',
     dragFree: true,
@@ -275,7 +275,12 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
               </button>
             </div>
           </div>
-          <div className='grid grid-cols-2 gap-4'>
+          <div className=''>
+            <Button variant='secondary' className='w-full'>
+              {t('soldOut')}
+            </Button>
+          </div>
+          {/* <div className='grid grid-cols-2 gap-4'>
             <Button variant='outline' onClick={() => addItem(data, quantity, selectedOption)}>
               {t('addToCart')}
             </Button>
@@ -286,7 +291,7 @@ function ProductDetail({ data }: { data: ProductDetailType }) {
               }}>
               {t('buyNow')}
             </Button>
-          </div>
+          </div> */}
           <div className='space-y-2.5'>
             <div className='text-base font-semibold '>{t('productDetails')}</div>
             <div className='flex flex-col justify-start items-start'>

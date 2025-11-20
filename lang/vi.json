@@ -161,6 +161,7 @@
     "addToCart": "Thêm vào giỏ",
     "checkout": "Thanh toán",
     "preOrder": "Đặt trước",
+    "soldOut": "Hết hàng",
     "allCollections": "Tất cả bộ sưu tập",
     "by": "thiết kế bởi"
   },
@@ -174,7 +175,8 @@
     "origin": "Xuất xứ",
     "productDescription": "Mô tả sản phẩm",
     "vietnam": "Việt Nam",
-    "regular": "Cơ bản"
+    "regular": "Cơ bản",
+    "soldOut": "Hết hàng"
   },
   "cart": {
     "cart": "Giỏ hàng",

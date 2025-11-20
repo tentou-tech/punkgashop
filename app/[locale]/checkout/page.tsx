@@ -80,10 +80,11 @@ export default function Checkout() {
   const { checkoutItems } = useCart()
 
   useEffect(() => {
-    if (checkoutItems.length === 0) {
-      toast.error(cartT('cartEmpty'))
-      router.replace('/')
-    }
+    router.replace('/')
+    // if (checkoutItems.length === 0) {
+    //   toast.error(cartT('cartEmpty'))
+    //   router.replace('/')
+    // }
   }, [checkoutItems, cartT])
 
   return (

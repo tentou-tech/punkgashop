@@ -6,24 +6,24 @@ import Instagram from '@/assets/icons/instagram'
 import Tiktok from '@/assets/icons/tiktok'
 import X from '@/assets/icons/x'
 import Youtube from '@/assets/icons/youtube'
-import { Button } from '@/components/ui/button'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { sizeOrder } from '@/config'
+// import { Button } from '@/components/ui/button'
+// import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+// import { sizeOrder } from '@/config'
 import { useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { ProductCollectionDetail } from '@/models/shop'
-import { useCart } from '@/provider/cart'
+// import { useCart } from '@/provider/cart'
 import { getCollectionById } from '@/services/shop'
 import { getSrcImage } from '@/utils/image'
 import { formatCurrency } from '@/utils/number'
-import { Minus, PlusIcon } from 'lucide-react'
+// import { Minus, PlusIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import { useState } from 'react'
+// import { useState } from 'react'
 import useSWR from 'swr'
-import SizeGuideImage from '@/assets/size-guide.png'
+// import SizeGuideImage from '@/assets/size-guide.png'
 export default function CollectionDetail() {
   const t = useTranslations('collection')
   const params = useParams()
@@ -140,62 +140,62 @@ export default function CollectionDetail() {
 const Product = ({ product }: { product: ProductCollectionDetail['products'][number] }) => {
   const t = useTranslations('collection')
   const commonT = useTranslations('common')
-  const [quantity, setQuantity] = useState(1)
+  // const [quantity, setQuantity] = useState(1)
   const params = useParams()
-  const [open, setOpen] = useState(false)
-  const { addItem, setCheckoutItems } = useCart()
+  // const [open, setOpen] = useState(false)
+  // const { addItem, setCheckoutItems } = useCart()
   const { push } = useRouter()
-  const optionKeys = product?.product_options[0].option ? Object.keys(product.product_options[0].option) : []
-  const subOptionKeys = optionKeys.filter((key) => typeof (product?.product_options[0].option as any)[key] !== 'string')
-  const [selectedOption, setSelectedOption] = useState({
-    ...product?.product_options[0],
-    subOptions: subOptionKeys.map((key) => ({
-      key,
-      value: (product?.product_options[0].option as any)[key][0],
-    })),
-  })
-  const onOptionSelect = (option: string, key: string, optionType: string) => {
-    if (optionType === 'main') {
-      const newOption = product?.product_options.find((opt) => {
-        return (opt.option as any)[key].toLowerCase() === option.toLowerCase()
-      })
-      if (newOption) {
-        setSelectedOption((prev) => {
-          if (
-            subOptionKeys.some((subKey) => {
-              const oldValue = prev.subOptions.find((subOption) => subOption.key === subKey)?.value
+  // const optionKeys = product?.product_options[0].option ? Object.keys(product.product_options[0].option) : []
+  // const subOptionKeys = optionKeys.filter((key) => typeof (product?.product_options[0].option as any)[key] !== 'string')
+  // const [selectedOption, setSelectedOption] = useState({
+  //   ...product?.product_options[0],
+  //   subOptions: subOptionKeys.map((key) => ({
+  //     key,
+  //     value: (product?.product_options[0].option as any)[key][0],
+  //   })),
+  // })
+  // const onOptionSelect = (option: string, key: string, optionType: string) => {
+  //   if (optionType === 'main') {
+  //     const newOption = product?.product_options.find((opt) => {
+  //       return (opt.option as any)[key].toLowerCase() === option.toLowerCase()
+  //     })
+  //     if (newOption) {
+  //       setSelectedOption((prev) => {
+  //         if (
+  //           subOptionKeys.some((subKey) => {
+  //             const oldValue = prev.subOptions.find((subOption) => subOption.key === subKey)?.value
 
-              if (!(prev.option as any)[subKey].includes(oldValue)) {
-                return true
-              }
-              return false
-            })
-          ) {
-            return {
-              ...newOption,
-              subOptions: subOptionKeys.map((key) => ({
-                key,
-                value: (newOption.option as any)[key][0],
-              })),
-            }
-          }
-          return {
-            ...newOption,
-            subOptions: prev.subOptions,
-          }
-        })
-      }
-    } else {
-      setSelectedOption((prev) => {
-        const newSubOptions = prev.subOptions.filter((subOption) => subOption.key !== key)
-        newSubOptions.push({ key, value: option })
-        return {
-          ...prev,
-          subOptions: newSubOptions,
-        }
-      })
-    }
-  }
+  //             if (!(prev.option as any)[subKey].includes(oldValue)) {
+  //               return true
+  //             }
+  //             return false
+  //           })
+  //         ) {
+  //           return {
+  //             ...newOption,
+  //             subOptions: subOptionKeys.map((key) => ({
+  //               key,
+  //               value: (newOption.option as any)[key][0],
+  //             })),
+  //           }
+  //         }
+  //         return {
+  //           ...newOption,
+  //           subOptions: prev.subOptions,
+  //         }
+  //       })
+  //     }
+  //   } else {
+  //     setSelectedOption((prev) => {
+  //       const newSubOptions = prev.subOptions.filter((subOption) => subOption.key !== key)
+  //       newSubOptions.push({ key, value: option })
+  //       return {
+  //         ...prev,
+  //         subOptions: newSubOptions,
+  //       }
+  //     })
+  //   }
+  // }
   return (
     <div
       onClick={() => push(`/collection/${params['collection-id']}/product/${product.id}`)}
@@ -207,8 +207,13 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
           </div>
         </div>
       </div>
+      <div className='h-5 md:h-6 px-1 py-0.5 bg-[#323239] rounded-xs inline-flex justify-center items-center absolute top-10 left-2 z-10'>
+        <div className='px-1 flex justify-center items-center gap-2'>
+          <div className='text-center justify-center text-white text-[10px] md:text-xs font-bold'>{t('soldOut')}</div>
+        </div>
+      </div>
       <div className='w-full aspect-square relative'>
-        <div className='add-to-cart absolute bottom-2.5 right-2.5 hidden'>
+        {/* <div className='add-to-cart absolute bottom-2.5 right-2.5 hidden'>
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
               <Button
@@ -350,7 +355,7 @@ const Product = ({ product }: { product: ProductCollectionDetail['products'][num
               </div>
             </DialogContent>
           </Dialog>
-        </div>
+        </div> */}
         <Image
           src={getSrcImage(product.thumbnail)}
           alt='Product'

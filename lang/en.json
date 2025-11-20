@@ -161,6 +161,7 @@
     "addToCart": "Add to cart",
     "checkout": "Checkout",
     "preOrder": "Pre order",
+    "soldOut": "Sold out",
     "allCollections": "All Collections",
     "by": "by"
   },
@@ -174,7 +175,8 @@
     "origin": "Origin",
     "productDescription": "Product Description",
     "vietnam": "Vietnam",
-    "regular": "Regular"
+    "regular": "Regular",
+    "soldOut": "Sold out"
   },
   "cart": {
     "cart": "Cart",
